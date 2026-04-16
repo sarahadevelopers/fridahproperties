@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <!-- Primary SEO -->
+    <title>Properties for Sale in Kitengela, Syokimau, Kilimani | Property By Fridah</title>
+    <meta name="description" content="Browse verified properties for sale in Kitengela, Ngong, Ongata Rongai, Kilimani, Syokimau & Athi River. All properties vetted with clean titles and guided site visits.">
+    <meta name="keywords" content="Houses for Sale Kitengela, Land for Sale Syokimau, Properties for Sale Kilimani, Buy House Ngong, Real Estate Kenya">
+    <meta name="author" content="Property by Fridah Ltd.">
+    <link rel="canonical" href="https://propertybyfridah.com/forsale.html">
+    <link rel="icon" type="image/webp" href="images/PropertyByFridah-favicon.webp">
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="properties.css">
+
+    <style>
+        /* ========== RESET & GLOBAL ========== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Jost', sans-serif; background: #fff; color: #111827; scroll-behavior: smooth; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+        .section-padding { padding: 60px 0; }
+
+        /* ========== NAVBAR (same as index) ========== */
+        .navbar-premium {
+            position: sticky; top: 0; z-index: 1100;
+            background: rgba(255,255,255,0.96); backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0,0,0,0.04); padding: 16px 0;
+        }
+        .nav-container {
+            display: flex; justify-content: space-between; align-items: center;
+            max-width: 1400px; margin: 0 auto; padding: 0 32px;
+        }
+        .logo-img { height: 48px; width: auto; }
+        .nav-links { display: flex; gap: 1.8rem; align-items: center; list-style: none; }
+        .nav-links li { position: relative; }
+        .nav-links li a { font-weight: 500; color: #111827; font-size: 14px; transition: 0.2s; display: flex; align-items: center; gap: 5px; }
+        .nav-links li a:hover { color: #EFBF04; }
+        .dropdown-menu {
+            position: absolute; top: 40px; left: 0; min-width: 220px;
+            background: white; border-radius: 16px; box-shadow: 0 20px 35px -8px rgba(0,0,0,0.1);
+            padding: 12px 0; opacity: 0; visibility: hidden; transition: 0.25s;
+            border: 1px solid #f1f5f9; z-index: 100;
+        }
+        .nav-links li:hover .dropdown-menu { opacity: 1; visibility: visible; }
+        .dropdown-menu li a { padding: 10px 20px; display: block; font-size: 13px; color: #4b5563; }
+        .dropdown-menu li a:hover { background: #f8f8f8; color: #EFBF04; padding-left: 24px; }
+        .btn-nav-cta { background: #25D366; color: white !important; padding: 8px 18px; border-radius: 40px; font-weight: 600; gap: 8px; }
+
+        /* Mobile menu */
+        .menu-toggle { display: none; font-size: 24px; cursor: pointer; background: none; border: none; color: #111827; }
+        .mobile-menu {
+            position: fixed; top: 0; right: -100%; width: 85%; max-width: 380px; height: 100vh;
+            background: white; z-index: 2000; padding: 0; transition: 0.35s cubic-bezier(0.2,0.9,0.4,1.1);
+            box-shadow: -8px 0 40px rgba(0,0,0,0.12); display: flex; flex-direction: column;
+        }
+        .mobile-menu.active { right: 0; }
+        .mobile-menu-header { display: flex; justify-content: space-between; padding: 24px; border-bottom: 1px solid #f0f0f0; }
+        .mobile-close { width: 40px; height: 40px; background: #f5f5f5; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        .mobile-nav-links { flex: 1; padding: 16px 0; }
+        .mobile-nav-links .nav-item { padding: 12px 24px; }
+        .mobile-nav-links .nav-item a { display: flex; align-items: center; gap: 14px; font-size: 16px; font-weight: 500; color: #1a1a2e; }
+        .mobile-nav-links .nav-item a i { width: 24px; color: #25D366; }
+        .mobile-trust { padding: 16px 24px; background: #fafaf8; margin: 0 20px 20px; border-radius: 16px; text-align: center; font-size: 12px; }
+        .mobile-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); backdrop-filter: blur(6px); opacity: 0; visibility: hidden; transition: 0.3s; z-index: 1999; }
+        .mobile-overlay.active { opacity: 1; visibility: visible; }
+        .mobile-bottom-nav {
+            display: none; position: fixed; bottom: 0; left: 0; right: 0;
+            background: rgba(255,255,255,0.98); backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(0,0,0,0.06); padding: 8px 12px 16px;
+            z-index: 1000; justify-content: space-around; gap: 4px;
+        }
+        .mobile-bottom-nav a { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 10px; color: #6b7280; flex: 1; text-align: center; }
+        .mobile-bottom-nav a i { font-size: 20px; }
+        .mobile-bottom-nav a.active { color: #25D366; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .menu-toggle { display: block; }
+            .mobile-bottom-nav { display: flex; }
+        }
+
+        /* ========== PAGE HEADER ========== */
+        .page-header {
+            background: linear-gradient(135deg, #0a0f1c 0%, #1a1f2e 100%);
+            padding: 100px 0 60px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-header::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 20%, rgba(239,191,4,0.12), transparent 50%);
+            pointer-events: none;
+        }
+        .page-header h1 { font-family: 'Playfair Display', serif; font-size: 48px; margin-bottom: 16px; position: relative; z-index: 2; }
+        .page-header p { font-size: 18px; opacity: 0.9; position: relative; z-index: 2; }
+        .property-count { color: #EFBF04; font-size: 18px; font-weight: 600; margin-top: 10px; }
+
+        /* ========== FILTERS (sale‑specific) ========== */
+        .property-filters { background: white; position: relative; z-index: 10; margin-top: -30px; }
+        .filters-wrap {
+            background: white; border-radius: 24px; padding: 28px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.06); border: 1px solid #f1f5f9;
+        }
+        .filter-tabs { display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
+        .tab-btn { padding: 10px 24px; border-radius: 40px; background: #f3f4f6; border: none; font-weight: 600; cursor: pointer; transition: 0.2s; }
+        .tab-btn.active { background: #0a0f1c; color: white; }
+        .filters-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; align-items: end; }
+        .filter-group { display: flex; flex-direction: column; }
+        .filter-group label { font-size: 12px; font-weight: 600; margin-bottom: 6px; color: #4b5563; }
+        .filter-select, .filter-input { padding: 12px 14px; border-radius: 12px; border: 1px solid #e5e7eb; font-family: 'Jost', sans-serif; font-size: 14px; }
+        .filter-btns { display: flex; gap: 12px; align-items: center; }
+        .btn-primary { background: #25D366; color: white; padding: 12px 24px; border-radius: 40px; border: none; font-weight: 600; cursor: pointer; }
+        .btn-link { background: transparent; border: none; color: #6b7280; cursor: pointer; }
+
+        /* ========== RESULTS HEADER ========== */
+        .results-header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin: 32px 0 24px; flex-wrap: wrap; gap: 16px;
+        }
+        .results-count { font-size: 14px; color: #6b7280; }
+        .results-count span { font-weight: 700; color: #25D366; }
+        .sort-select { padding: 8px 16px; border: 1px solid #e5e7eb; border-radius: 40px; font-family: 'Jost', sans-serif; font-size: 13px; background: white; cursor: pointer; }
+
+        /* ========== PROPERTY GRID & CARDS (same as locations page) ========== */
+        .property-grid-premium { display: grid; gap: 32px; margin: 32px 0; }
+        @media (min-width: 1200px) { .property-grid-premium { grid-template-columns: repeat(4, 1fr); } }
+        @media (min-width: 768px) and (max-width: 1199px) { .property-grid-premium { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 767px) { .property-grid-premium { grid-template-columns: 1fr; gap: 24px; } }
+
+        .listing-card {
+            background: white; border-radius: 28px; overflow: hidden;
+            transition: all 0.35s cubic-bezier(0.2,0.9,0.4,1.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04); border: 1px solid #f1f5f9;
+            display: flex; flex-direction: column; height: 100%;
+        }
+        .listing-card:hover { transform: translateY(-8px); box-shadow: 0 20px 35px -8px rgba(0,0,0,0.12); }
+        .listing-image { position: relative; height: 240px; overflow: hidden; background: #f0f0f0; }
+        .listing-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .listing-card:hover .listing-image img { transform: scale(1.05); }
+        .listing-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.35), transparent 60%); pointer-events: none; }
+        .badge-verified { position: absolute; top: 14px; left: 14px; background: #EFBF04; color: #0a0f1c; padding: 4px 12px; border-radius: 40px; font-size: 10px; font-weight: 700; z-index: 2; }
+        .price-tag { position: absolute; bottom: 16px; left: 16px; background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); padding: 6px 16px; border-radius: 40px; font-weight: 800; font-size: 18px; color: #0a0f1c; z-index: 2; }
+        .listing-body { padding: 18px 20px 20px; flex: 1; display: flex; flex-direction: column; }
+        .listing-location { font-size: 13px; color: #6b7280; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+        .listing-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; margin: 6px 0; line-height: 1.3; }
+        .listing-specs { display: flex; flex-wrap: wrap; gap: 16px; margin: 12px 0; padding: 10px 0; border-top: 1px solid #f0f0f0; border-bottom: 1px solid #f0f0f0; font-size: 13px; color: #4b5563; }
+        .listing-specs span { display: inline-flex; align-items: center; gap: 6px; }
+        .listing-actions { display: flex; justify-content: space-between; gap: 12px; margin-top: auto; padding-top: 12px; }
+        .btn-whatsapp-card { background: #25D366; color: white; padding: 10px 16px; border-radius: 40px; font-weight: 600; font-size: 13px; text-align: center; flex: 1; transition: 0.2s; display: inline-flex; align-items: center; justify-content: center; gap: 6px; }
+        .btn-whatsapp-card:hover { background: #128C7E; transform: translateY(-2px); }
+        .btn-details { background: transparent; border: 1.5px solid #25D366; color: #25D366; padding: 10px 16px; border-radius: 40px; font-weight: 600; font-size: 13px; text-align: center; flex: 1; cursor: pointer; transition: 0.2s; }
+        .btn-details:hover { background: #25D366; color: white; }
+
+        /* Pagination */
+        .pagination { display: flex; justify-content: center; gap: 8px; margin-top: 40px; flex-wrap: wrap; }
+        .pagination-btn { padding: 10px 16px; border: 1px solid #e5e7eb; background: white; border-radius: 40px; cursor: pointer; transition: 0.2s; }
+        .pagination-btn:hover { border-color: #25D366; color: #25D366; }
+        .pagination-btn.active { background: #25D366; color: white; border-color: #25D366; }
+
+        /* Modal */
+        .property-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 10000; overflow-y: auto; }
+        .property-modal.active { display: block; }
+        .modal-content { position: relative; background: white; max-width: 900px; margin: 50px auto; border-radius: 20px; overflow: hidden; }
+        .modal-close { position: absolute; top: 15px; right: 15px; width: 40px; height: 40px; background: rgba(0,0,0,0.6); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; }
+        .modal-gallery .main-image-container { height: 400px; position: relative; }
+        .modal-gallery .main-image { width: 100%; height: 100%; object-fit: cover; }
+        .gallery-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.6); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; }
+        .gallery-prev { left: 15px; }
+        .gallery-next { right: 15px; }
+        .thumbnails { display: flex; gap: 10px; padding: 15px; overflow-x: auto; background: #f8f9fa; }
+        .thumbnail { width: 80px; height: 60px; object-fit: cover; border-radius: 8px; cursor: pointer; opacity: 0.6; }
+        .thumbnail.active, .thumbnail:hover { opacity: 1; border: 2px solid #25D366; }
+        .modal-info { padding: 25px; }
+        .modal-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 15px; }
+        .modal-price { font-size: 24px; font-weight: 700; color: #25D366; }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 25px; }
+        .info-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #eee; }
+        .modal-actions { display: flex; gap: 15px; padding: 20px 25px; background: #f8f9fa; border-top: 1px solid #eee; }
+        .modal-actions .btn { flex: 1; text-align: center; padding: 12px; border-radius: 40px; text-decoration: none; font-weight: 600; }
+
+        /* Trust block, final CTA, footer (same as index) */
+        .trust-block { background: #f8fafc; padding: 60px 0; margin-top: 40px; text-align: center; }
+        .trust-icons { display: flex; justify-content: center; gap: 40px; margin-top: 30px; flex-wrap: wrap; }
+        .trust-icon { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+        .trust-icon i { font-size: 32px; color: #25D366; }
+        .final-cta { background: #0a0f1c; color: white; text-align: center; padding: 60px 0; }
+        .final-cta h2 { color: #EFBF04; }
+        .btn-whatsapp { background: #25D366; color: white; padding: 12px 24px; border-radius: 40px; display: inline-flex; align-items: center; gap: 8px; font-weight: 600; text-decoration: none; }
+        .btn-secondary { background: transparent; border: 1px solid #EFBF04; color: #EFBF04; padding: 12px 24px; border-radius: 40px; display: inline-flex; align-items: center; gap: 8px; font-weight: 600; text-decoration: none; }
+
+        .premium-footer { background: #0a0f1c; color: #cbd5e1; position: relative; margin-top: 60px; }
+        .premium-footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #25D366, #EFBF04, #25D366); }
+        .footer-container { max-width: 1400px; margin: 0 auto; padding: 60px 32px 30px; }
+        .footer-grid { display: grid; grid-template-columns: 1.8fr 1.2fr 1.2fr 1.5fr; gap: 40px; }
+        .footer-logo-img { height: 52px; filter: brightness(0) invert(1); }
+        .footer-heading { font-family: 'Playfair Display', serif; font-size: 18px; color: white; margin-bottom: 24px; position: relative; display: inline-block; }
+        .footer-heading::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 35px; height: 2px; background: #EFBF04; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: #9ca3af; font-size: 14px; transition: 0.25s; text-decoration: none; }
+        .footer-links a:hover { color: #EFBF04; }
+        .contact-info { list-style: none; }
+        .contact-info li { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; font-size: 14px; }
+        .contact-info i { color: #EFBF04; width: 20px; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 30px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; font-size: 12px; }
+        .developer-credit a { color: #EFBF04; text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .page-header { padding: 80px 0 40px; }
+            .page-header h1 { font-size: 32px; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .listing-actions { flex-direction: column; }
+            .btn-whatsapp-card, .btn-details { width: 100%; }
+            .modal-content { margin: 0; border-radius: 0; height: 100vh; overflow-y: auto; }
+            .modal-gallery .main-image-container { height: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ==================== NAVBAR ==================== -->
+<nav class="navbar-premium">
+    <div class="nav-container">
+        <a href="index.html"><img src="images/PropertyByFridah-favicon.webp" class="logo-img" alt="Property By Fridah"></a>
+        <ul class="nav-links">
+            <li><a href="#">Rentals <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="rentals.html?type=bungalow">Bungalow</a></li>
+                    <li><a href="rentals.html?type=maisonette">Maisonette</a></li>
+                    <li><a href="rentals.html?type=townhouse">Townhouse</a></li>
+                    <li><a href="rentals.html?type=apartment">Apartment / Flat</a></li>
+                    <li><a href="rentals.html?type=studio">Studio / Bedsitter</a></li>
+                    <li><a href="rentals.html?type=villa">Villa</a></li>
+                    <li><a href="rentals.html?type=furnished">Furnished</a></li>
+                </ul>
+            </li>
+            <li><a href="#">For Sale <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="forsale.html?type=bungalow">Bungalow</a></li>
+                    <li><a href="forsale.html?type=maisonette">Maisonette</a></li>
+                    <li><a href="forsale.html?type=townhouse">Townhouse</a></li>
+                    <li><a href="forsale.html?type=apartment">Apartment / Flat</a></li>
+                    <li><a href="forsale.html?type=villa">Villa</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Lands & Plots <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="lands.html?type=land-res">Residential Plot</a></li>
+                    <li><a href="lands.html?type=land-comm">Commercial Land</a></li>
+                    <li><a href="lands.html?type=ranch">Agricultural</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Airbnb <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="airbnb.html?location=kitengela">Kitengela</a></li>
+                    <li><a href="airbnb.html?location=ngong">Ngong</a></li>
+                    <li><a href="airbnb.html?location=syokimau">Syokimau</a></li>
+                    <li><a href="airbnb.html?location=ongata-rongai">Ongata Rongai</a></li>
+                    <li><a href="airbnb.html?location=athi-river">Athi River</a></li>
+                    <li><a href="airbnb.html?location=kilimani">Kilimani</a></li>
+                </ul>
+            </li>
+            <li><a href="locations.html">All Properties</a></li>
+            <li><a href="blog.html">Insights</a></li>
+            <li><a href="#" class="btn-nav-cta"><i class="fas fa-phone-alt"></i> +254 721 911 181</a></li>
+        </ul>
+        <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+    </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+        <img src="images/PropertyByFridah-favicon.webp" alt="Property By Fridah" class="mobile-logo">
+        <div class="mobile-close" id="closeMobileMenu"><i class="fas fa-times"></i></div>
+    </div>
+    <div class="mobile-nav-links">
+        <div class="nav-item"><a href="rentals.html"><i class="fas fa-home"></i> Rentals</a></div>
+        <div class="nav-item"><a href="forsale.html"><i class="fas fa-building"></i> For Sale</a></div>
+        <div class="nav-item"><a href="land.html"><i class="fas fa-map-pin"></i> Lands & Plots</a></div>
+        <div class="nav-item"><a href="airbnb.html"><i class="fab fa-airbnb"></i> Airbnb</a></div>
+        <div class="nav-item"><a href="locations.html"><i class="fas fa-map-marker-alt"></i> All Properties</a></div>
+        <div class="nav-item"><a href="blog.html"><i class="fas fa-newspaper"></i> Insights</a></div>
+    </div>
+    <div class="mobile-trust">
+        <p><i class="fas fa-shield-alt"></i> 100% Verified Properties</p>
+        <p><i class="fas fa-eye"></i> Daily Site Visits</p>
+    </div>
+</div>
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<!-- Mobile bottom navigation -->
+<div class="mobile-bottom-nav">
+    <a href="index.html"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="rentals.html"><i class="fas fa-building"></i><span>Rentals</span></a>
+    <a href="forsale.html" class="active"><i class="fas fa-hand-holding-usd"></i><span>For Sale</span></a>
+    <a href="land.html"><i class="fas fa-map-pin"></i><span>Land</span></a>
+    <a href="airbnb.html"><i class="fab fa-airbnb"></i><span>Airbnb</span></a>
+    <a href="locations.html"><i class="fas fa-map-marker-alt"></i><span>All</span></a>
+</div>
+
+<!-- ==================== PAGE HEADER ==================== -->
+<section class="page-header">
+    <div class="container">
+        <h1><i class="fas fa-hand-holding-usd"></i> Properties for Sale</h1>
+        <p>Verified homes, land, and investment properties across Kenya</p>
+        <div class="property-count" id="propertyCount">
+            <i class="fas fa-spinner fa-spin"></i> Loading available properties...
+        </div>
+    </div>
+</section>
+
+<!-- ==================== FILTERS (sale‑specific) ==================== -->
+<section class="property-filters">
+    <div class="container">
+        <div class="filters-wrap">
+            <div class="filter-tabs">
+                <button class="tab-btn active" data-transaction="sale">For Sale</button>
+            </div>
+            <div class="filters-container">
+                <div class="filter-group search-wide">
+                    <label><i class="fas fa-search"></i> Search</label>
+                    <input type="text" id="searchInput" class="filter-input" placeholder="Title, location...">
+                </div>
+                <div class="filter-group">
+                    <label><i class="fas fa-map-marker-alt"></i> Location</label>
+                    <select id="locationSelect" class="filter-select">
+                        <option value="all">All Locations</option>
+                        <option value="kitengela">Kitengela</option>
+                        <option value="ngong">Ngong</option>
+                        <option value="syokimau">Syokimau</option>
+                        <option value="ongata-rongai">Ongata Rongai</option>
+                        <option value="athi-river">Athi River</option>
+                        <option value="kilimani">Kilimani</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label><i class="fas fa-home"></i> Property Type</label>
+                    <select id="typeSelect" class="filter-select">
+                        <option value="all">All Types</option>
+                        <optgroup label="Residential">
+                            <option value="bungalow">Bungalow</option>
+                            <option value="maisonette">Maisonette</option>
+                            <option value="townhouse">Townhouse</option>
+                            <option value="apartment">Apartment / Flat</option>
+                            <option value="villa">Villa</option>
+                        </optgroup>
+                        <optgroup label="Land">
+                            <option value="land-res">Residential Plot</option>
+                            <option value="land-comm">Commercial Land</option>
+                            <option value="ranch">Agricultural</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="filter-group" id="price-container">
+                    <label><i class="fas fa-tag"></i> Budget</label>
+                    <select id="priceSelect" class="filter-select">
+                        <option value="all">Any Price</option>
+                        <option value="under-5m">Under KES 5M</option>
+                        <option value="5m-15m">KES 5M – 15M</option>
+                        <option value="15m-30m">KES 15M – 30M</option>
+                        <option value="over-30m">Over KES 30M</option>
+                    </select>
+                </div>
+                <div class="filter-group" id="bedrooms-container">
+                    <label><i class="fas fa-bed"></i> Bedrooms</label>
+                    <select id="bedroomsSelect" class="filter-select">
+                        <option value="all">Any</option>
+                        <option value="1">1 Bedroom</option>
+                        <option value="2">2 Bedrooms</option>
+                        <option value="3">3 Bedrooms</option>
+                        <option value="4+">4+ Bedrooms</option>
+                    </select>
+                </div>
+                <div class="filter-btns">
+                    <button id="applyFiltersBtn" class="btn-primary">Apply Filters</button>
+                    <button id="resetFiltersBtn" class="btn-link">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== RESULTS HEADER ==================== -->
+<div class="container">
+    <div class="results-header">
+        <div class="results-count">Showing <span id="showingCount">0</span> of <span id="totalCount">0</span> properties for sale</div>
+        <div class="sort-container">
+            <label>Sort by:</label>
+            <select id="sortSelect" class="sort-select">
+                <option value="newest">Newest First</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PROPERTIES GRID ==================== -->
+<section class="section-padding" style="padding-top: 0;">
+    <div class="container">
+        <div id="propertiesGrid" class="property-grid-premium"></div>
+        <div id="pagination" class="pagination"></div>
+        <div id="noResults" style="display: none; text-align: center; padding: 60px;">
+            <i class="fas fa-home" style="font-size: 48px; color: #cbd5e1;"></i>
+            <h3>No properties match your filters</h3>
+            <p>Try adjusting your search criteria or contact us for personalized help.</p>
+            <button id="resetNoResultsBtn" class="btn-primary" style="margin-top: 20px;">Reset Filters</button>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== TRUST BLOCK ==================== -->
+<section class="trust-block">
+    <div class="container">
+        <div class="trust-content">
+            <h2>Why Buy Through Property By Fridah?</h2>
+            <p>We verify every property, document, and transaction to ensure your peace of mind.</p>
+            <div class="trust-icons">
+                <div class="trust-icon"><i class="fas fa-check-circle"></i><span>100% Verified Listings</span></div>
+                <div class="trust-icon"><i class="fas fa-map-marked-alt"></i><span>Site Visits Included</span></div>
+                <div class="trust-icon"><i class="fas fa-file-contract"></i><span>Clear Documentation</span></div>
+                <div class="trust-icon"><i class="fas fa-handshake"></i><span>No Pressure to Buy</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== FINAL CTA ==================== -->
+<section class="final-cta">
+    <div class="container">
+        <h2>Ready to Find Your Dream Property?</h2>
+        <p>New listings move fast. Talk to us today and let's secure the right one for you.</p>
+        <div class="header-btns">
+            <a href="https://wa.me/254721911181" class="btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> Ask on WhatsApp</a>
+            <a href="tel:+254721911181" class="btn-secondary"><i class="fas fa-phone-alt"></i> Call Our Team</a>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="premium-footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="images/PropertyByFridah-favicon.webp" class="footer-logo-img">
+                <p class="footer-tagline">Verified Properties. Trusted Investments.<br>We verify every document and property.</p>
+                <div class="social-links" style="display: flex; gap: 16px; margin-top: 20px;">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><img src="images/threads2.png" alt="Threads" style="width: 18px;"></a>
+                </div>
+            </div>
+            <div><h4 class="footer-heading">Properties</h4><ul class="footer-links"><li><a href="rentals.html">Rentals</a></li><li><a href="forsale.html">For Sale</a></li><li><a href="land.html">Lands & Plots</a></li><li><a href="airbnb.html">Airbnb</a></li></ul></div>
+            <div><h4 class="footer-heading">Resources</h4><ul class="footer-links"><li><a href="blog.html">Property Insights</a></li><li><a href="blog.html">Buyer Guide</a></li><li><a href="blog.html">How to Verify Land</a></li></ul></div>
+            <div><h4 class="footer-heading">Company</h4><ul class="footer-links"><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+            <div><h4 class="footer-heading">Get In Touch</h4><ul class="contact-info"><li><i class="fas fa-map-marker-alt"></i> Kitengela, Kenya</li><li><i class="fas fa-phone-alt"></i> <a href="tel:+254721911181">+254 721 911 181</a></li><li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/254721911181">+254 721 911 181</a></li><li><i class="fas fa-envelope"></i> <a href="mailto:info@propertybyfridah.co.ke">info@propertybyfridah.co.ke</a></li></ul></div>
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">&copy; <span id="currentYear"></span> Property By Fridah. All Rights Reserved.</div>
+            <div class="developer-credit">Designed & Developed by <a href="https://sarahadevelopers.co.ke" target="_blank">Saraha Developers</a></div>
+            <div class="footer-legal-links"><a href="#">Terms</a><span>•</span><a href="#">Privacy</a><span>•</span><a href="#">Cookies</a></div>
+        </div>
+    </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/254721911181" class="whatsapp-float" style="position: fixed; bottom: 80px; right: 20px; background: #25D366; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 999;" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<!-- Modal -->
+<div id="propertyModal" class="property-modal">
+    <div class="modal-content">
+        <div class="modal-close" id="modalClose"><i class="fas fa-times"></i></div>
+        <div class="modal-body" id="modalBody"></div>
+    </div>
+</div>
+
+<script src="shared-api.js"></script>
+<script>
+    // ==================== FOR SALE PAGE SCRIPT (using shared API) ====================
+    let allProperties = [];
+    let filteredProperties = [];
+    let currentPage = 1;
+    const itemsPerPage = 12;
+
+    async function fetchProperties() {
+        try {
+            const all = await PropertyAPI.fetchAllProperties();
+            // filter only sale properties
+            return all.filter(p => p.transaction === 'sale');
+        } catch (err) {
+            console.error('Error fetching properties:', err);
+            return [];
+        }
+    }
+
+    function applyFilters() {
+        const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+        const location = document.getElementById('locationSelect').value;
+        const type = document.getElementById('typeSelect').value;
+        const priceRange = document.getElementById('priceSelect').value;
+        const bedrooms = document.getElementById('bedroomsSelect').value;
+
+        filteredProperties = allProperties.filter(p => {
+            if (searchTerm && !`${p.title} ${PropertyAPI.formatLocation(p.location)} ${p.description}`.toLowerCase().includes(searchTerm)) return false;
+            if (location !== 'all' && p.location !== location) return false;
+            if (type !== 'all' && p.type !== type) return false;
+            if (priceRange !== 'all') {
+                const price = p.priceNum;
+                if (priceRange === 'under-5m' && price > 5000000) return false;
+                if (priceRange === '5m-15m' && (price < 5000000 || price > 15000000)) return false;
+                if (priceRange === '15m-30m' && (price < 15000000 || price > 30000000)) return false;
+                if (priceRange === 'over-30m' && price <= 30000000) return false;
+            }
+            if (bedrooms !== 'all') {
+                if (bedrooms === '4+' && p.bedrooms < 4) return false;
+                if (bedrooms !== '4+' && p.bedrooms != bedrooms) return false;
+            }
+            return true;
+        });
+
+        const sortBy = document.getElementById('sortSelect').value;
+        if (sortBy === 'price-low') filteredProperties.sort((a,b) => a.priceNum - b.priceNum);
+        else if (sortBy === 'price-high') filteredProperties.sort((a,b) => b.priceNum - a.priceNum);
+        else if (sortBy === 'newest') filteredProperties.sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt));
+
+        document.getElementById('totalCount').innerText = filteredProperties.length;
+        document.getElementById('propertyCount').innerHTML = `<i class="fas fa-hand-holding-usd"></i> ${filteredProperties.length} properties for sale`;
+        currentPage = 1;
+        renderProperties();
+        renderPagination();
+    }
+
+    function renderProperties() {
+        const grid = document.getElementById('propertiesGrid');
+        const start = (currentPage-1)*itemsPerPage;
+        const pageProps = filteredProperties.slice(start, start+itemsPerPage);
+        const showing = Math.min(start+itemsPerPage, filteredProperties.length);
+        document.getElementById('showingCount').innerText = showing;
+
+        if (pageProps.length === 0) {
+            grid.innerHTML = '';
+            document.getElementById('noResults').style.display = 'block';
+            return;
+        }
+        document.getElementById('noResults').style.display = 'none';
+
+        grid.innerHTML = pageProps.map(p => {
+            const img = p.images?.[0] || PropertyAPI.getPlaceholder();
+            const priceDisplay = PropertyAPI.formatPrice(p.priceNum, p.transaction);
+            return `
+                <div class="listing-card">
+                    <div class="listing-image">
+                        <img src="${img}" alt="${p.title}" loading="lazy" onerror="this.src='${PropertyAPI.getPlaceholder()}'">
+                        <div class="badge-verified">Verified</div>
+                        <div class="price-tag">${priceDisplay}</div>
+                    </div>
+                    <div class="listing-body">
+                        <div class="listing-location"><i class="fas fa-map-marker-alt"></i> ${PropertyAPI.formatLocation(p.location)}</div>
+                        <h3 class="listing-title">${p.title.length > 40 ? p.title.substr(0,40)+'…' : p.title}</h3>
+                        <div class="listing-specs">
+                            ${p.bedrooms>0 ? `<span><i class="fas fa-bed"></i> ${p.bedrooms}</span>` : ''}
+                            ${p.bathrooms>0 ? `<span><i class="fas fa-bath"></i> ${p.bathrooms}</span>` : ''}
+                            ${p.parking>0 ? `<span><i class="fas fa-car"></i> ${p.parking}</span>` : ''}
+                            ${p.size ? `<span><i class="fas fa-expand"></i> ${p.size}</span>` : ''}
+                        </div>
+                        <div class="listing-actions">
+                            <a href="https://wa.me/${p.whatsapp}?text=${encodeURIComponent(`Hi, I'm interested in buying "${p.title}" at ${PropertyAPI.formatLocation(p.location)}. Price: ${priceDisplay}`)}" class="btn-whatsapp-card" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                            <button class="btn-details" data-id="${p.id}">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+        document.querySelectorAll('.btn-details').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const prop = allProperties.find(p => p.id == btn.dataset.id);
+                if (prop) openModal(prop);
+            });
+        });
+    }
+
+    function renderPagination() {
+        const total = Math.ceil(filteredProperties.length / itemsPerPage);
+        const pagDiv = document.getElementById('pagination');
+        if (total <= 1) { pagDiv.innerHTML = ''; return; }
+        let html = '';
+        if (currentPage > 1) html += `<button class="pagination-btn" data-page="${currentPage-1}">Prev</button>`;
+        for (let i=1; i<=total; i++) {
+            if (i === currentPage) html += `<button class="pagination-btn active" data-page="${i}">${i}</button>`;
+            else if (Math.abs(i-currentPage) <= 2 || i===1 || i===total) html += `<button class="pagination-btn" data-page="${i}">${i}</button>`;
+        }
+        if (currentPage < total) html += `<button class="pagination-btn" data-page="${currentPage+1}">Next</button>`;
+        pagDiv.innerHTML = html;
+        document.querySelectorAll('.pagination-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                currentPage = parseInt(btn.dataset.page);
+                renderProperties();
+                renderPagination();
+                window.scrollTo({ top: document.getElementById('propertiesGrid').offsetTop - 100, behavior: 'smooth' });
+            });
+        });
+    }
+
+    let currentImages = [], currentImgIndex = 0;
+    function openModal(prop) {
+        const modal = document.getElementById('propertyModal');
+        const body = document.getElementById('modalBody');
+        const images = prop.images?.length ? prop.images : [PropertyAPI.getPlaceholder()];
+        currentImages = images;
+        currentImgIndex = 0;
+        const priceDisplay = PropertyAPI.formatPrice(prop.priceNum, prop.transaction);
+        body.innerHTML = `
+            <div class="modal-gallery">
+                <div class="main-image-container">
+                    <img src="${images[0]}" class="main-image" onerror="this.src='${PropertyAPI.getPlaceholder()}'">
+                    ${images.length > 1 ? `<button class="gallery-nav gallery-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="gallery-nav gallery-next"><i class="fas fa-chevron-right"></i></button>
+                    <div class="image-counter">1 / ${images.length}</div>` : ''}
+                </div>
+                ${images.length > 1 ? `<div class="thumbnails">${images.map((img,i)=>`<img src="${img}" class="thumbnail ${i===0?'active':''}" data-index="${i}" onerror="this.src='${PropertyAPI.getPlaceholder()}'">`).join('')}</div>` : ''}
+            </div>
+            <div class="modal-info">
+                <div class="modal-top"><h2>${prop.title}</h2><div class="modal-price">${priceDisplay}</div></div>
+                <div class="info-grid">
+                    <div class="info-item"><strong>Location:</strong> ${PropertyAPI.formatLocation(prop.location)}</div>
+                    <div class="info-item"><strong>Type:</strong> ${prop.type}</div>
+                    ${prop.bedrooms>0 ? `<div class="info-item"><strong>Bedrooms:</strong> ${prop.bedrooms}</div>` : ''}
+                    ${prop.bathrooms>0 ? `<div class="info-item"><strong>Bathrooms:</strong> ${prop.bathrooms}</div>` : ''}
+                    ${prop.size ? `<div class="info-item"><strong>Size:</strong> ${prop.size}</div>` : ''}
+                </div>
+                ${prop.description ? `<div class="modal-section"><h3>Description</h3><p>${prop.description}</p></div>` : ''}
+                ${prop.features?.length ? `<div class="modal-section"><h3>Features</h3><div class="features-grid">${prop.features.map(f=>`<span class="feature-tag">${f}</span>`).join('')}</div></div>` : ''}
+            </div>
+            <div class="modal-actions">
+                <a href="https://wa.me/${prop.whatsapp}?text=${encodeURIComponent(`Hi, I'm interested in buying "${prop.title}" at ${PropertyAPI.formatLocation(prop.location)}. Price: ${priceDisplay}`)}" class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Inquiry</a>
+                <a href="tel:+254721911181" class="btn btn-secondary"><i class="fas fa-phone"></i> Call Now</a>
+            </div>
+        `;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        if (images.length > 1) {
+            const main = body.querySelector('.main-image');
+            const prev = body.querySelector('.gallery-prev');
+            const next = body.querySelector('.gallery-next');
+            const counter = body.querySelector('.image-counter');
+            const thumbs = body.querySelectorAll('.thumbnail');
+            const update = (idx) => {
+                currentImgIndex = (idx + images.length) % images.length;
+                main.src = images[currentImgIndex];
+                if (counter) counter.innerText = `${currentImgIndex+1}/${images.length}`;
+                thumbs.forEach((t,i)=>t.classList.toggle('active', i===currentImgIndex));
+            };
+            prev?.addEventListener('click', () => update(currentImgIndex-1));
+            next?.addEventListener('click', () => update(currentImgIndex+1));
+            thumbs.forEach(t => t.addEventListener('click', () => update(parseInt(t.dataset.index))));
+        }
+        const close = () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+        document.getElementById('modalClose').onclick = close;
+        modal.onclick = (e) => { if (e.target === modal) close(); };
+    }
+
+    function setupEvents() {
+        document.getElementById('applyFiltersBtn').addEventListener('click', applyFilters);
+        document.getElementById('resetFiltersBtn').addEventListener('click', () => {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('locationSelect').value = 'all';
+            document.getElementById('typeSelect').value = 'all';
+            document.getElementById('priceSelect').value = 'all';
+            document.getElementById('bedroomsSelect').value = 'all';
+            document.getElementById('sortSelect').value = 'newest';
+            applyFilters();
+        });
+        document.getElementById('resetNoResultsBtn')?.addEventListener('click', () => document.getElementById('resetFiltersBtn').click());
+        document.getElementById('sortSelect').addEventListener('change', applyFilters);
+    }
+
+    async function init() {
+        document.getElementById('propertiesGrid').innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:60px;"><i class="fas fa-spinner fa-spin"></i> Loading properties for sale...</div>';
+        allProperties = await fetchProperties();
+        applyFilters();
+        setupEvents();
+        // handle URL parameters (location, type)
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlLoc = urlParams.get('location');
+        if (urlLoc) {
+            const locSelect = document.getElementById('locationSelect');
+            if (locSelect && [...locSelect.options].some(opt => opt.value === urlLoc)) {
+                locSelect.value = urlLoc;
+                applyFilters();
+            }
+        }
+        const urlType = urlParams.get('type');
+        if (urlType) {
+            const typeSelect = document.getElementById('typeSelect');
+            if (typeSelect && [...typeSelect.options].some(opt => opt.value === urlType)) {
+                typeSelect.value = urlType;
+                applyFilters();
+            }
+        }
+    }
+    init();
+
+    // Mobile menu toggle
+    const menuToggleBtn = document.getElementById('menuToggleBtn');
+    const mobileMenuDiv = document.getElementById('mobileMenu');
+    const mobileOverlayDiv = document.getElementById('mobileOverlay');
+    const mobileCloseBtn = document.getElementById('closeMobileMenu');
+    function openMobileMenu() { mobileMenuDiv.classList.add('active'); mobileOverlayDiv.classList.add('active'); document.body.style.overflow = 'hidden'; }
+    function closeMobileMenu() { mobileMenuDiv.classList.remove('active'); mobileOverlayDiv.classList.remove('active'); document.body.style.overflow = ''; }
+    if (menuToggleBtn) menuToggleBtn.addEventListener('click', openMobileMenu);
+    if (mobileCloseBtn) mobileCloseBtn.addEventListener('click', closeMobileMenu);
+    if (mobileOverlayDiv) mobileOverlayDiv.addEventListener('click', closeMobileMenu);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && mobileMenuDiv.classList.contains('active')) closeMobileMenu(); });
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

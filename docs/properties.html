@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <!-- Primary SEO -->
+    <title>Verified Properties for Sale & Rent in Kenya | Property by Fridah</title>
+    <meta name="description" content="Browse verified homes, apartments, and land for sale or rent in Kitengela, Syokimau, Kilimani, Ngong, Ongata Rongai & Athi River. All properties vetted with clean documentation.">
+    <meta name="keywords" content="Property by Fridah, Verified Properties Kenya, Kitengela Real Estate, Syokimau Land, Kilimani Apartments">
+    <meta name="author" content="Property by Fridah Ltd.">
+    <link rel="canonical" href="https://propertybyfridah.com/properties.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="images/PropertyByFridah-favicon.webp">
+    <link rel="icon" type="image/png" href="images/PropertyByFridah-favicon.png">
+    <link rel="apple-touch-icon" href="images/PropertyByFridah-favicon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Verified Properties for Sale & Rent | Property by Fridah">
+    <meta property="og:description" content="Browse verified homes and land in Kitengela, Syokimau, Kilimani, Ngong & more.">
+    <meta property="og:image" content="https://propertybyfridah.com/images/og-properties.jpg">
+    <meta property="og:url" content="https://propertybyfridah.com/properties.html">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Swiper JS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="properties.css">
+
+    
+</head>
+<body>
+
+<!-- Navbar Premium -->
+<nav class="navbar-premium">
+    <div class="nav-container">
+        <a href="index.html"><img src="images/PropertyByFridah-favicon.webp" class="logo-img" alt="Property By Fridah"></a>
+        <ul class="nav-links">
+            <li><a href="#">Rentals <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="properties.html?type=rent&subtype=bungalow">Bungalow</a></li>
+                    <li><a href="properties.html?type=rent&subtype=maisonette">Maisonette</a></li>
+                    <li><a href="properties.html?type=rent&subtype=townhouse">Townhouse</a></li>
+                    <li><a href="properties.html?type=rent&subtype=apartment">Apartment / Flat</a></li>
+                    <li><a href="properties.html?type=rent&subtype=studio">Studio / Bedsitter</a></li>
+                    <li><a href="properties.html?type=rent&subtype=villa">Villa</a></li>
+                    <li><a href="properties.html?type=rent&subtype=furnished">Furnished</a></li>
+                </ul>
+            </li>
+            <li><a href="#">For Sale <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="properties.html?type=sale&subtype=bungalow">Bungalow</a></li>
+                    <li><a href="properties.html?type=sale&subtype=maisonette">Maisonette</a></li>
+                    <li><a href="properties.html?type=sale&subtype=townhouse">Townhouse</a></li>
+                    <li><a href="properties.html?type=sale&subtype=apartment">Apartment / Flat</a></li>
+                    <li><a href="properties.html?type=sale&subtype=villa">Villa</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Lands & Plots <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="properties.html?type=plots&subtype=residential">Residential Plot</a></li>
+                    <li><a href="properties.html?type=plots&subtype=commercial">Commercial Land</a></li>
+                    <li><a href="properties.html?type=plots&subtype=agricultural">Agricultural</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Airbnb <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="properties.html?location=kitengela&type=rent">Kitengela</a></li>
+                    <li><a href="properties.html?location=ngong&type=rent">Ngong</a></li>
+                    <li><a href="properties.html?location=syokimau&type=rent">Syokimau</a></li>
+                    <li><a href="properties.html?location=ongata-rongai&type=rent">Ongata Rongai</a></li>
+                    <li><a href="properties.html?location=athi-river&type=rent">Athi River</a></li>
+                    <li><a href="properties.html?location=kilimani&type=rent">Kilimani</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Locations <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="properties.html?location=kitengela">Kitengela</a></li>
+                    <li><a href="properties.html?location=ngong">Ngong</a></li>
+                    <li><a href="properties.html?location=syokimau">Syokimau</a></li>
+                    <li><a href="properties.html?location=ongata-rongai">Ongata Rongai</a></li>
+                    <li><a href="properties.html?location=athi-river">Athi River</a></li>
+                    <li><a href="properties.html?location=kilimani">Kilimani</a></li>
+                </ul>
+            </li>
+            <li><a href="blog.html">Insights</a></li>
+            <li><a href="#" class="btn-nav-cta"><i class="fas fa-phone-alt"></i> +254 721 911 181</a></li>
+        </ul>
+        <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+        <img src="images/PropertyByFridah-favicon.webp" alt="Property By Fridah" class="mobile-logo">
+        <div class="mobile-close" id="closeMobileMenu"><i class="fas fa-times"></i></div>
+    </div>
+    <div class="mobile-search">
+        <input type="text" id="mobileSearchInput" placeholder="Search location, price...">
+    </div>
+    <div class="mobile-nav-links">
+        <div class="nav-item"><a href="properties.html?type=rent"><i class="fas fa-home"></i> Rentals</a></div>
+        <div class="nav-item"><a href="properties.html?type=sale"><i class="fas fa-building"></i> For Sale</a></div>
+        <div class="nav-item"><a href="properties.html?type=plots"><i class="fas fa-map-pin"></i> Lands & Plots</a></div>
+        <div class="nav-item"><a href="properties.html?type=rent&category=airbnb"><i class="fab fa-airbnb"></i> Airbnb</a></div>
+        <div class="nav-item"><a href="properties.html"><i class="fas fa-map-marker-alt"></i> Locations</a></div>
+        <div class="nav-item"><a href="blog.html"><i class="fas fa-newspaper"></i> Insights</a></div>
+    </div>
+    <div class="mobile-trust">
+        <p><i class="fas fa-shield-alt"></i> 100% Verified Properties</p>
+        <p><i class="fas fa-eye"></i> Daily Site Visits</p>
+    </div>
+</div>
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<!-- Mobile Bottom Navigation -->
+<div class="mobile-bottom-nav">
+    <a href="index.html"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="properties.html?type=rent" class="active"><i class="fas fa-building"></i><span>Rentals</span></a>
+    <a href="properties.html?type=sale"><i class="fas fa-hand-holding-usd"></i><span>For Sale</span></a>
+    <a href="properties.html?type=rent&category=airbnb"><i class="fab fa-airbnb"></i><span>Airbnb</span></a>
+    <a href="https://wa.me/254721911181"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a>
+    <a href="tel:+254721911181"><i class="fas fa-phone-alt"></i><span>Call</span></a>
+</div>
+
+<!-- Page Header -->
+<section class="page-header page-header--compact">
+    <div class="container">
+        <div class="page-header-inner">
+            <h1><i class="fas fa-search"></i> Discover Verified Properties</h1>
+            <div class="hero-search">
+                <input type="search" id="hero-search" class="hero-search-input" placeholder="Search: 3 bedroom in Kilimani, plot in Kitengela...">
+                <button class="hero-search-btn" id="hero-search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="header-btns">
+                <a href="https://wa.me/254721911181" class="btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp for Listings</a>
+                <a href="tel:+254721911181" class="btn-secondary"><i class="fas fa-calendar-check"></i> Book Site Visit</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Filters Section -->
+<section class="property-filters">
+    <div class="container">
+        <div class="filters-wrap">
+            <div class="filter-tabs">
+                <button class="tab-btn active" type="button" role="tab" aria-selected="true" data-type="sale">For Sale</button>
+                <button class="tab-btn" type="button" role="tab" aria-selected="false" data-type="rent">For Rent</button>
+                <button class="tab-btn" type="button" role="tab" aria-selected="false" data-type="lease">Lease</button>
+            </div>
+            <div class="filters-container">
+                <!-- Smart Search -->
+                <div class="filter-group search-wide">
+                    <label for="smart-search">🔎 Search</label>
+                    <input type="search" id="smart-search" class="filter-input" placeholder="Type: “3 bedroom in Kilimani” or “Plot Kitengela”…" autocomplete="off" spellcheck="false">
+                </div>
+
+                <!-- Location -->
+                <div class="filter-group">
+                    <label for="location">📍 Location</label>
+                    <select id="location" class="filter-select">
+                        <option value="all">All Locations</option>
+                        <option value="kitengela">Kitengela</option>
+                        <option value="ngong">Ngong</option>
+                        <option value="syokimau">Syokimau</option>
+                        <option value="ongata-rongai">Ongata Rongai</option>
+                        <option value="athi-river">Athi River</option>
+                        <option value="kilimani">Kilimani</option>
+                    </select>
+                </div>
+
+                <!-- Property Type -->
+                <div class="filter-group">
+                    <label for="property-type">🏠 Property Type</label>
+                    <select id="property-type" class="filter-select">
+                        <option value="all">All Property Types</option>
+                        <!-- Residential -->
+                        <optgroup label="Residential">
+                            <option value="bungalow">Bungalow</option>
+                            <option value="maisonette">Maisonette</option>
+                            <option value="townhouse">Townhouse</option>
+                            <option value="apartment">Apartment / Flat</option>
+                            <option value="studio">Studio / Bedsitter</option>
+                            <option value="villa">Villa</option>
+                            <option value="furnished">Furnished</option>
+                        </optgroup>
+                        <!-- Land -->
+                        <optgroup label="Land">
+                            <option value="land-res">Residential Plot</option>
+                            <option value="land-comm">Commercial Land</option>
+                            <option value="ranch">Agricultural</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <!-- Price Range (Dynamic via JS tabs) -->
+                <div class="filter-group" id="price-container">
+                    <label for="price-range">💰 Budget</label>
+                    <select id="price-range" class="filter-select">
+                        <option value="all">Any Price</option>
+                        <!-- JS will replace these based on active tab -->
+                        <option value="under-5m">Under KES 5M</option>
+                        <option value="5m-15m">KES 5M – 15M</option>
+                        <option value="15m-30m">KES 15M – 30M</option>
+                        <option value="over-30m">Over KES 30M</option>
+                    </select>
+                </div>
+
+                <!-- Bedrooms (hides automatically for land/commercial) -->
+                <div class="filter-group" id="bedrooms-container">
+                    <label for="bedrooms">🛏️ Bedrooms</label>
+                    <select id="bedrooms" class="filter-select">
+                        <option value="all">Any</option>
+                        <option value="1">1 Bedroom</option>
+                        <option value="2">2 Bedrooms</option>
+                        <option value="3">3 Bedrooms</option>
+                        <option value="4+">4+ Bedrooms</option>
+                    </select>
+                </div>
+
+                <!-- Actions -->
+                <div class="filter-btns">
+                    <button id="applyFilters" type="button" class="btn btn-primary">Explore Listings</button>
+                    <button id="resetFilters" type="button" class="btn btn-link">Reset Filters</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Results Header -->
+<div class="container">
+    <div class="results-header">
+        <div class="results-count">Showing <span id="showing-count">0</span> of <span id="total-count">0</span> properties</div>
+    </div>
+</div>
+
+<!-- Properties Grid -->
+<section class="section-padding" style="padding-top: 0;">
+    <div class="container">
+        <div id="propertiesGrid" class="properties-grid">
+            <!-- Properties will be loaded here by properties.js -->
+        </div>
+        <div id="pagination" class="pagination"></div>
+        <div id="noResults" class="text-center" style="display: none; text-align: center; padding: 60px;">
+            <h3>No properties match your filters</h3>
+            <p>Try adjusting your search criteria or <a href="https://wa.me/254721911181" target="_blank">WhatsApp us</a> for personalized recommendations.</p>
+            <button id="resetFiltersBtn" class="btn-primary" style="margin-top: 20px;">Reset Filters</button>
+        </div>
+    </div>
+</section>
+
+<!-- Trust Block -->
+<section class="trust-block">
+    <div class="container">
+        <div class="trust-content">
+            <h2>Why Buy Through Property By Fridah?</h2>
+            <p>We understand the fear of scams, unclear documents, and rushed decisions. That's why we do things differently.</p>
+            <div class="trust-icons">
+                <div class="trust-icon"><i class="fas fa-check-circle"></i><span>All listings physically verified</span></div>
+                <div class="trust-icon"><i class="fas fa-map-marked-alt"></i><span>Site visits before payment</span></div>
+                <div class="trust-icon"><i class="fas fa-file-contract"></i><span>Clear document explanation</span></div>
+                <div class="trust-icon"><i class="fas fa-handshake"></i><span>No pressure to buy</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+            <p>Get answers to common questions about buying property through us</p>
+        </div>
+        <div class="faq-grid">
+            <div class="faq-item"><h3><i class="fas fa-check-circle"></i> Are the properties verified?</h3><p>Yes. All properties are checked for ownership and documentation before listing.</p></div>
+            <div class="faq-item"><h3><i class="fas fa-map-marked-alt"></i> Can I visit before buying?</h3><p>Absolutely. We organize site visits for all serious buyers.</p></div>
+            <div class="faq-item"><h3><i class="fas fa-user-tie"></i> Is Property By Fridah the Best Real Estate Agent in Kitengela?</h3><p>Yes. We are multi-award winners and have served thousands of clients.</p></div>
+            <div class="faq-item"><h3><i class="fas fa-file-contract"></i> What documents should I expect?</h3><p>Clean title deed, search certificate, mutation forms, and sale agreement.</p></div>
+            <div class="faq-item"><h3><i class="fas fa-globe"></i> Do you work with diaspora clients?</h3><p>Yes. We provide virtual tours and trusted local representation.</p></div>
+            <div class="faq-item"><h3><i class="fas fa-handshake"></i> Is there pressure to buy quickly?</h3><p>No. We believe in informed decisions. Take your time.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+    <div class="container">
+        <h2>Ready to Find the Right Property?</h2>
+        <p>New listings move fast. Talk to us today and let's secure the right one for you.</p>
+        <div class="header-btns">
+            <a href="https://wa.me/254721911181" class="btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Property By Fridah</a>
+            <a href="tel:+254721911181" class="btn-secondary"><i class="fas fa-calendar-check"></i> Book a Site Visit Today</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="premium-footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="images/PropertyByFridah-favicon.webp" class="footer-logo-img">
+                <p class="footer-tagline">Verified Properties. Trusted Investments.<br>We verify every document and title deed.</p>
+                <div class="social-links" style="display: flex; gap: 16px; margin-top: 20px;">
+                    <a href="https://web.facebook.com/p/Property-By-Fridah-100077130176779/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.tiktok.com/@propertybyfridah" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/property_by_fridah_ke/reels/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@PropertybyFridah" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.threads.com/@property_by_fridah_ke" target="_blank"><img src="images/threads2.png" alt="Threads" style="width: 18px;"></a>
+                </div>
+            </div>
+            <div><h4 class="footer-heading">Properties</h4><ul class="footer-links"><li><a href="properties.html">All Properties</a></li><li><a href="properties.html?type=rent">Rentals</a></li><li><a href="properties.html?type=sale">For Sale</a></li><li><a href="properties.html?type=plots">Plots & Land</a></li></ul></div>
+            <div><h4 class="footer-heading">Resources</h4><ul class="footer-links"><li><a href="blog.html">Property Insights</a></li><li><a href="blog.html">Buyer Guide</a></li><li><a href="blog.html">How to Verify Land</a></li></ul></div>
+            <div><h4 class="footer-heading">Company</h4><ul class="footer-links"><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+            <div><h4 class="footer-heading">Get In Touch</h4><ul class="contact-info"><li><i class="fas fa-map-marker-alt"></i> Kitengela, Kenya</li><li><i class="fas fa-phone-alt"></i> <a href="tel:+254721911181">+254 721 911 181</a></li><li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/254721911181">+254 721 911 181</a></li><li><i class="fas fa-envelope"></i> <a href="mailto:info@propertybyfridah.co.ke">info@propertybyfridah.co.ke</a></li></ul></div>
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">&copy; <span id="currentYear"></span> Property By Fridah. All Rights Reserved.</div>
+            <div class="developer-credit">Designed & Developed by <a href="https://sarahadevelopers.co.ke" target="_blank">Saraha Developers</a></div>
+            <div class="footer-legal-links"><a href="#">Terms</a><span>•</span><a href="#">Privacy</a><span>•</span><a href="#">Cookies</a></div>
+        </div>
+    </div>
+</footer>
+
+<!-- WhatsApp Float -->
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="properties.js"></script>
+<script>
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileOverlay = document.getElementById("mobileOverlay");
+    const closeBtn = document.getElementById("closeMobileMenu");
+
+    function openMenu() {
+        mobileMenu.classList.add("active");
+        mobileOverlay.classList.add("active");
+        if(menuToggle) menuToggle.classList.add("active");
+    }
+    function closeMenu() {
+        mobileMenu.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+        if(menuToggle) menuToggle.classList.remove("active");
+    }
+    if(menuToggle) menuToggle.addEventListener("click", openMenu);
+    if(closeBtn) closeBtn.addEventListener("click", closeMenu);
+    if(mobileOverlay) mobileOverlay.addEventListener("click", closeMenu);
+    document.addEventListener("keydown", (e) => { if(e.key === "Escape" && mobileMenu.classList.contains("active")) closeMenu(); });
+</script>
+</body>
+</html>
