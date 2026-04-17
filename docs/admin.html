@@ -455,15 +455,101 @@
     color: white;
     padding: 10px;
 }
+/* Admin Header Premium Styling */
+.admin-header {
+  background: linear-gradient(135deg, #0a0f1c 0%, #1a1f2e 100%);
+  color: white;
+  padding: 20px 0;
+  border-bottom: 3px solid #EFBF04;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.admin-logo {
+  height: 50px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+.admin-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.admin-badge {
+  background: rgba(239, 191, 4, 0.2);
+  border: 1px solid #EFBF04;
+  padding: 4px 12px;
+  border-radius: 40px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-left: 12px;
+  font-family: 'Jost', sans-serif;
+}
+
+.header-stats {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  padding: 8px 18px;
+  border-radius: 40px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.header-stats i {
+  color: #25D366;
+  margin-right: 6px;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .admin-header h1 {
+    font-size: 1.4rem;
+  }
+  .admin-badge {
+    display: inline-block;
+    margin-left: 8px;
+  }
+  .admin-logo {
+    height: 40px;
+  }
+}
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="container">
-      <h1>Property By Fridah - Admin Panel</h1>
+<header class="admin-header">
+  <div class="container">
+    <div class="header-content">
+      <div class="logo-area">
+        <img src="images/PropertyByFridah-favicon.webp" alt="Property By Fridah" class="admin-logo">
+        <h1>Property By Fridah <span class="admin-badge">Admin Panel</span></h1>
+      </div>
+      <div class="header-stats">
+        <span class="stat-badge"><i class="fas fa-database"></i> <span id="propertyCountDisplay">0</span> properties</span>
+      </div>
     </div>
-  </header>
+  </div>
+</header>
 
   <main class="admin-container">
     <!-- Login Form -->
@@ -770,6 +856,11 @@
         observer.observe(typeSelect, { attributes: true });
       }
     })();
+    // Add this inside the existing DOMContentLoaded or after PropertiesTable.render
+function updateAdminHeaderCount(count) {
+  const countSpan = document.getElementById('propertyCountDisplay');
+  if (countSpan) countSpan.textContent = count;
+}
   </script>
 </body>
 </html>

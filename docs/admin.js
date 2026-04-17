@@ -565,11 +565,15 @@ const PropertiesTable = {
     allProperties: [],
 
     render(properties) {
-        this.allProperties = properties;
-        this.currentPage = 1;
-        this.renderPage();
-        this.renderPagination();
-    },
+    this.allProperties = properties;
+    this.currentPage = 1;
+    this.renderPage();
+    this.renderPagination();
+    // Update header count
+    if (typeof updateAdminHeaderCount === 'function') {
+        updateAdminHeaderCount(properties.length);
+    }
+},
 
     renderPage() {
         if (!propertiesTable) return;
