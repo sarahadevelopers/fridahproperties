@@ -523,8 +523,8 @@
               <button type="button" class="transaction-btn" data-transaction="rent">
                 <i class="fas fa-home"></i> For Rent
               </button>
-              <button type="button" class="transaction-btn" data-transaction="lease">
-                <i class="fas fa-file-contract"></i> For Lease
+              <button type="button" class="transaction-btn" data-transaction="rent" id="shortStayBtn">
+                <i class="fab fa-airbnb"></i> Airbnb
               </button>
             </div>
             <input type="hidden" id="transaction" value="sale">
@@ -730,7 +730,7 @@
         } else if (selectedType === 'rent' || selectedType === 'lease') {
           priceLabel.innerHTML = 'Monthly Rent (KES) *';
           priceInput.placeholder = 'e.g., 50000 (per month)';
-          priceHint.innerHTML = 'For rent/lease: enter the monthly rent in KES.';
+          priceHint.innerHTML = 'For rent: enter the monthly rent in KES.';
         } else {
           priceLabel.innerHTML = 'Price (KES) *';
           priceInput.placeholder = 'e.g., 5000000';
@@ -738,17 +738,28 @@
         }
       }
 
+      // Special handling for the "Short Stay / Airbnb" button
+      const shortStayBtn = document.getElementById('shortStayBtn');
+      if (shortStayBtn) {
+        shortStayBtn.addEventListener('click', function() {
+          // Set transaction to 'rent'
+          document.getElementById('transaction').value = 'rent';
+          // Set property type to 'airbnb'
+          const typeSelectElem = document.getElementById('type');
+          if (typeSelectElem) {
+            typeSelectElem.value = 'airbnb';
+            // Trigger change event to update price label
+            typeSelectElem.dispatchEvent(new Event('change'));
+          }
+          // Update active button styling
+          document.querySelectorAll('.transaction-btn').forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+        });
+      }
+
       if (typeSelect) {
         typeSelect.addEventListener('change', updatePriceField);
-        // Run once on page load in case of editing (populated by admin.js)
-        // We'll also call it after a short delay to ensure any populated value is set
         setTimeout(updatePriceField, 100);
-        // Also listen for form population (admin.js will set value, but we need to react)
-        // A more robust way: observe attribute changes on select, but this is enough.
-        // We'll also call it whenever the form is reset or a property is loaded for edit.
-        // Admin.js already calls FormManager.reset() and populateForEdit. We can hook into that.
-        // But simplest: re-run after any click on edit or reset? Not perfect.
-        // We'll use MutationObserver to detect value changes.
         const observer = new MutationObserver(function(mutations) {
           mutations.forEach(function(mutation) {
             if (mutation.attributeName === 'value') {
