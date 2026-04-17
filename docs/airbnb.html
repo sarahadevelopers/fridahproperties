@@ -513,19 +513,16 @@
     // Airbnb types (including the dedicated 'airbnb' type from admin)
     const airbnbTypes = ['apartment', 'villa', 'studio', 'townhouse', 'bungalow', 'furnished', 'airbnb'];
 
-    async function fetchProperties() {
-        try {
-            const all = await PropertyAPI.fetchAllProperties();
-            // Only properties with transaction rent/lease AND type in airbnbTypes
-            return all.filter(p => 
-                (p.transaction === 'rent' || p.transaction === 'lease') && 
-                airbnbTypes.includes(p.type)
-            );
-        } catch (err) {
-            console.error('Error fetching properties:', err);
-            return [];
-        }
+   async function fetchProperties() {
+    try {
+        const all = await PropertyAPI.fetchAllProperties();
+        // ONLY properties with type === 'airbnb' (and transaction rent/lease)
+        return all.filter(p => p.type === 'airbnb' && (p.transaction === 'rent' || p.transaction === 'lease'));
+    } catch (err) {
+        console.error('Error fetching properties:', err);
+        return [];
     }
+}
 
     function applyFilters() {
         const searchTerm = document.getElementById('searchInput').value.toLowerCase();
