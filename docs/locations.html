@@ -595,43 +595,64 @@
     }
 
     function applyFilters() {
-        const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-        const location = document.getElementById('locationSelect').value;
-        const type = document.getElementById('typeSelect').value;
-        const priceRange = document.getElementById('priceSelect').value;
+    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+    const location = document.getElementById('locationSelect').value;
+    const type = document.getElementById('typeSelect').value;
+    const priceRange = document.getElementById('priceSelect').value;
 
-        filteredProperties = allProperties.filter(p => {
-            if (currentTransaction !== 'all' && p.transaction !== currentTransaction) return false;
-            if (searchTerm && !`${p.title} ${PropertyAPI.formatLocation(p.location)} ${p.description}`.toLowerCase().includes(searchTerm)) return false;
-            if (location !== 'all' && p.location !== location) return false;
-            if (type !== 'all' && p.type !== type) return false;
-            if (priceRange !== 'all') {
-                const price = p.priceNum;
-                if (currentTransaction === 'rent') {
-                    if (priceRange === '0-15k' && price > 15000) return false;
-                    if (priceRange === '15k-50k' && (price < 15000 || price > 50000)) return false;
-                    if (priceRange === '50k-150k' && (price < 50000 || price > 150000)) return false;
-                    if (priceRange === 'over-150k' && price <= 150000) return false;
-                } else {
-                    if (priceRange === 'under-5m' && price > 5000000) return false;
-                    if (priceRange === '5m-15m' && (price < 5000000 || price > 15000000)) return false;
-                    if (priceRange === '15m-30m' && (price < 15000000 || price > 30000000)) return false;
-                    if (priceRange === 'over-30m' && price <= 30000000) return false;
-                }
+    filteredProperties = allProperties.filter(p => {
+        // 1. Special handling for "land" and "airbnb" tabs (filter by property type)
+        if (currentTransaction === 'land') {
+            const landTypes = ['land-res', 'land-comm', 'ranch'];
+            if (!landTypes.includes(p.type)) return false;
+        } else if (currentTransaction === 'airbnb') {
+            if (p.type !== 'airbnb') return false;
+        } else if (currentTransaction !== 'all') {
+            // For 'sale' and 'rent', filter by transaction as before
+            if (p.transaction !== currentTransaction) return false;
+        }
+
+        // 2. Search term
+        if (searchTerm && !`${p.title} ${PropertyAPI.formatLocation(p.location)} ${p.description}`.toLowerCase().includes(searchTerm)) return false;
+
+        // 3. Location dropdown
+        if (location !== 'all' && p.location !== location) return false;
+
+        // 4. Property type dropdown (only applies if not already filtered by tab)
+        if (type !== 'all' && p.type !== type) return false;
+
+        // 5. Price filter – use appropriate logic per tab
+        if (priceRange !== 'all') {
+            const price = p.priceNum;
+            // For land or sale (or all) – use sale price ranges
+            if (currentTransaction === 'land' || currentTransaction === 'sale' || currentTransaction === 'all') {
+                if (priceRange === 'under-5m' && price > 5000000) return false;
+                if (priceRange === '5m-15m' && (price < 5000000 || price > 15000000)) return false;
+                if (priceRange === '15m-30m' && (price < 15000000 || price > 30000000)) return false;
+                if (priceRange === 'over-30m' && price <= 30000000) return false;
             }
-            return true;
-        });
+            // For rent or Airbnb – use nightly/monthly ranges
+            else if (currentTransaction === 'rent' || currentTransaction === 'airbnb') {
+                if (priceRange === '0-15k' && price > 15000) return false;
+                if (priceRange === '15k-50k' && (price < 15000 || price > 50000)) return false;
+                if (priceRange === '50k-150k' && (price < 50000 || price > 150000)) return false;
+                if (priceRange === 'over-150k' && price <= 150000) return false;
+            }
+        }
 
-        const sortBy = document.getElementById('sortSelect').value;
-        if (sortBy === 'price-low') filteredProperties.sort((a,b) => a.priceNum - b.priceNum);
-        else if (sortBy === 'price-high') filteredProperties.sort((a,b) => b.priceNum - a.priceNum);
-        else if (sortBy === 'newest') filteredProperties.sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt));
+        return true;
+    });
 
-        document.getElementById('totalCount').innerText = filteredProperties.length;
-        currentPage = 1;
-        renderProperties();
-        renderPagination();
-    }
+    const sortBy = document.getElementById('sortSelect').value;
+    if (sortBy === 'price-low') filteredProperties.sort((a,b) => a.priceNum - b.priceNum);
+    else if (sortBy === 'price-high') filteredProperties.sort((a,b) => b.priceNum - a.priceNum);
+    else if (sortBy === 'newest') filteredProperties.sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt));
+
+    document.getElementById('totalCount').innerText = filteredProperties.length;
+    currentPage = 1;
+    renderProperties();
+    renderPagination();
+}
 
     function renderProperties() {
         const grid = document.getElementById('propertiesGrid');
