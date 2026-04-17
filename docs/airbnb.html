@@ -502,6 +502,7 @@
     </div>
 </div>
  <script src="shared-api.js"></script>
+<script src="shared-api.js"></script>
 <script>
     // ==================== AIRBNB PAGE SCRIPT (using shared API) ====================
     let allProperties = [];
@@ -509,13 +510,13 @@
     let currentPage = 1;
     const itemsPerPage = 12;
 
-    // Airbnb: only rent/lease properties with types suitable for short stays
-    const airbnbTypes = ['apartment', 'villa', 'studio', 'townhouse', 'bungalow', 'furnished'];
+    // Airbnb types (including the dedicated 'airbnb' type from admin)
+    const airbnbTypes = ['apartment', 'villa', 'studio', 'townhouse', 'bungalow', 'furnished', 'airbnb'];
 
     async function fetchProperties() {
         try {
             const all = await PropertyAPI.fetchAllProperties();
-            // Filter: rent/lease transactions AND type in airbnbTypes
+            // Only properties with transaction rent/lease AND type in airbnbTypes
             return all.filter(p => 
                 (p.transaction === 'rent' || p.transaction === 'lease') && 
                 airbnbTypes.includes(p.type)
@@ -579,9 +580,7 @@
 
         grid.innerHTML = pageProps.map(p => {
             const img = p.images?.[0] || PropertyAPI.getPlaceholder();
-            const priceDisplay = (p.transaction === 'rent' || p.transaction === 'lease') 
-                ? `KES ${p.priceNum.toLocaleString('en-KE')} / night`
-                : PropertyAPI.formatPrice(p.priceNum, p.transaction);
+            const priceDisplay = PropertyAPI.formatPrice(p.priceNum, p.transaction, p.type);
             return `
                 <div class="listing-card">
                     <div class="listing-image">
@@ -644,9 +643,7 @@
         const images = prop.images?.length ? prop.images : [PropertyAPI.getPlaceholder()];
         currentImages = images;
         currentImgIndex = 0;
-        const priceDisplay = (prop.transaction === 'rent' || prop.transaction === 'lease') 
-            ? `KES ${prop.priceNum.toLocaleString('en-KE')} / night`
-            : PropertyAPI.formatPrice(prop.priceNum, prop.transaction);
+        const priceDisplay = PropertyAPI.formatPrice(prop.priceNum, prop.transaction, prop.type);
         body.innerHTML = `
             <div class="modal-gallery">
                 <div class="main-image-container">
@@ -741,31 +738,31 @@
     }
     init();
 
-    // Mobile menu toggle
-  // Mobile menu toggle – use class selector
-const menuToggleBtn = document.querySelector('.menu-toggle');
-const mobileMenuDiv = document.getElementById('mobileMenu');
-const mobileOverlayDiv = document.getElementById('mobileOverlay');
-const mobileCloseBtn = document.getElementById('closeMobileMenu');
+    // Mobile menu toggle (fixed)
+    const menuToggleBtn = document.querySelector('.menu-toggle');
+    const mobileMenuDiv = document.getElementById('mobileMenu');
+    const mobileOverlayDiv = document.getElementById('mobileOverlay');
+    const mobileCloseBtn = document.getElementById('closeMobileMenu');
 
-function openMobileMenu() {
-    mobileMenuDiv.classList.add('active');
-    mobileOverlayDiv.classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
+    function openMobileMenu() {
+        mobileMenuDiv.classList.add('active');
+        mobileOverlayDiv.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
 
-function closeMobileMenu() {
-    mobileMenuDiv.classList.remove('active');
-    mobileOverlayDiv.classList.remove('active');
-    document.body.style.overflow = '';
-}
+    function closeMobileMenu() {
+        mobileMenuDiv.classList.remove('active');
+        mobileOverlayDiv.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 
-if (menuToggleBtn) menuToggleBtn.addEventListener('click', openMobileMenu);
-if (mobileCloseBtn) mobileCloseBtn.addEventListener('click', closeMobileMenu);
-if (mobileOverlayDiv) mobileOverlayDiv.addEventListener('click', closeMobileMenu);
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mobileMenuDiv.classList.contains('active')) closeMobileMenu();
-}); document.getElementById("currentYear").textContent = new Date().getFullYear();
+    if (menuToggleBtn) menuToggleBtn.addEventListener('click', openMobileMenu);
+    if (mobileCloseBtn) mobileCloseBtn.addEventListener('click', closeMobileMenu);
+    if (mobileOverlayDiv) mobileOverlayDiv.addEventListener('click', closeMobileMenu);
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenuDiv.classList.contains('active')) closeMobileMenu();
+    });
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
 </script>
 </body>
 </html>

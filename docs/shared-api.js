@@ -2,23 +2,7 @@
 
 const API_BASE = 'https://propertybyfridahnew-db-user.onrender.com';
 
-// Helper: format price
-function formatPrice(priceNum, transaction = 'sale', rawPrice = '') {
-    if (!priceNum || priceNum === 0) return 'Price on request';
-    const tx = (transaction || 'sale').toLowerCase();
-    if (tx === 'rent' || tx === 'lease') {
-        const period = detectPeriod(rawPrice);
-        return `KES ${Math.round(priceNum).toLocaleString('en-KE')}${period}`;
-    }
-    if (priceNum >= 1_000_000) {
-        const millions = priceNum / 1_000_000;
-        const formatted = millions % 1 === 0 ? millions.toFixed(0) : millions.toFixed(1).replace(/\.0$/, '');
-        return `KES ${formatted}M`;
-    }
-    if (priceNum >= 1000) return `KES ${(priceNum / 1000).toFixed(0)}K`;
-    return `KES ${priceNum.toLocaleString('en-KE')}`;
-}
-
+// Helper: detect period from raw price string
 function detectPeriod(rawPrice = '') {
     const s = (rawPrice || '').toLowerCase();
     if (s.includes('/month') || s.includes('per month') || s.includes('monthly')) return ' / month';
@@ -26,6 +10,32 @@ function detectPeriod(rawPrice = '') {
     if (s.includes('/day') || s.includes('per day') || s.includes('daily')) return ' / day';
     if (s.includes('/year') || s.includes('per year') || s.includes('yearly') || s.includes('annum')) return ' / year';
     return ' / month';
+}
+
+// Helper: format price with support for Airbnb (nightly rate)
+function formatPrice(priceNum, transaction = 'sale', type = '', rawPrice = '') {
+    if (!priceNum || priceNum === 0) return 'Price on request';
+    const tx = (transaction || 'sale').toLowerCase();
+    
+    // Airbnb / short‑stay → nightly rate
+    if (type === 'airbnb') {
+        return `KES ${Math.round(priceNum).toLocaleString('en-KE')} / night`;
+    }
+    
+    // Regular rent / lease → monthly
+    if (tx === 'rent' || tx === 'lease') {
+        const period = detectPeriod(rawPrice);
+        return `KES ${Math.round(priceNum).toLocaleString('en-KE')}${period}`;
+    }
+    
+    // Sale properties
+    if (priceNum >= 1_000_000) {
+        const millions = priceNum / 1_000_000;
+        const formatted = millions % 1 === 0 ? millions.toFixed(0) : millions.toFixed(1).replace(/\.0$/, '');
+        return `KES ${formatted}M`;
+    }
+    if (priceNum >= 1000) return `KES ${(priceNum / 1000).toFixed(0)}K`;
+    return `KES ${priceNum.toLocaleString('en-KE')}`;
 }
 
 function extractPriceNumber(property) {
@@ -88,7 +98,7 @@ function processProperty(property) {
         transaction: transaction,
         status: (property.status || 'available').toLowerCase(),
         priceNum: priceNum,
-        priceDisplay: formatPrice(priceNum, transaction, property.price),
+        priceDisplay: formatPrice(priceNum, transaction, type, property.price),
         bedrooms: parseInt(property.bedrooms) || 0,
         bathrooms: parseInt(property.bathrooms) || 0,
         parking: parseInt(property.parking) || 0,
@@ -111,7 +121,7 @@ async function fetchAllProperties(limit = 200) {
         return properties.map(processProperty);
     } catch (error) {
         console.error('API fetch failed:', error);
-        return []; // Return empty array – you can also return sample data
+        return [];
     }
 }
 

@@ -1068,3 +1068,20 @@ textarea.form-control {
     height:160px;
   }
 }
+.pagination-btn {
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.pagination-btn:hover {
+  border-color: #28a745;
+  color: #28a745;
+}
+.pagination-btn.active {
+  background: #28a745;
+  color: white;
+  border-color: #28a745;
+}

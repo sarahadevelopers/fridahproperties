@@ -543,7 +543,7 @@
                 <option value="studio">Studio / Bedsitter</option>
                 <option value="villa">Villa</option>
                 <option value="furnished">Furnished</option>
-                <option value="airbnb">Airbnb / Short Stay</option>   <!-- NEW -->
+                <option value="airbnb">Airbnb / Short Stay</option>
               </optgroup>
               <!-- Land -->
               <optgroup label="Land">
@@ -556,9 +556,10 @@
         </div>
 
         <div class="form-row">
-          <div class="form-group">
-            <label for="price">Price (KES) *</label>
+          <div class="form-group" id="priceGroup">
+            <label for="price" id="priceLabel">Price (KES) *</label>
             <input type="number" id="price" class="form-control" required placeholder="e.g., 5000000" min="0">
+            <small id="priceHint" style="color: #6c757d; font-size: 12px; display: block; margin-top: 4px;">For sale/rent: total price or monthly rent. For Airbnb: nightly rate.</small>
           </div>
 
           <div class="form-group">
@@ -686,6 +687,10 @@
             </tr>
           </tbody>
         </table>
+        <!-- Pagination Controls -->
+<div id="paginationControls" style="display: flex; justify-content: center; gap: 8px; margin-top: 20px; flex-wrap: wrap;">
+  <!-- Buttons will be inserted here by JavaScript -->
+</div>
       </div>
     </section>
   </main>
@@ -693,18 +698,67 @@
   
   <script src="admin.js"></script>
   <!-- Image Preview Modal -->
-<div id="imageModal" class="modal">
-  <div class="modal-content">
-    <span class="modal-close">&times;</span>
-    <div class="modal-body">
-      <img id="modalImage" src="" alt="Property image">
+  <div id="imageModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <div class="modal-body">
+        <img id="modalImage" src="" alt="Property image">
+      </div>
+      <div class="modal-caption">
+        <span id="modalCounter"></span>
+      </div>
+      <button class="modal-prev" id="modalPrev"><i class="fas fa-chevron-left"></i></button>
+      <button class="modal-next" id="modalNext"><i class="fas fa-chevron-right"></i></button>
     </div>
-    <div class="modal-caption">
-      <span id="modalCounter"></span>
-    </div>
-    <button class="modal-prev" id="modalPrev"><i class="fas fa-chevron-left"></i></button>
-    <button class="modal-next" id="modalNext"><i class="fas fa-chevron-right"></i></button>
   </div>
-</div>
+
+  <!-- Additional script to dynamically change price label for Airbnb -->
+  <script>
+    (function() {
+      const typeSelect = document.getElementById('type');
+      const priceLabel = document.getElementById('priceLabel');
+      const priceInput = document.getElementById('price');
+      const priceHint = document.getElementById('priceHint');
+
+      function updatePriceField() {
+        if (!typeSelect) return;
+        const selectedType = typeSelect.value;
+        if (selectedType === 'airbnb') {
+          priceLabel.innerHTML = 'Nightly Rate (KES) *';
+          priceInput.placeholder = 'e.g., 5000 (per night)';
+          priceHint.innerHTML = 'Enter the nightly rate in KES (e.g., 5000).';
+        } else if (selectedType === 'rent' || selectedType === 'lease') {
+          priceLabel.innerHTML = 'Monthly Rent (KES) *';
+          priceInput.placeholder = 'e.g., 50000 (per month)';
+          priceHint.innerHTML = 'For rent/lease: enter the monthly rent in KES.';
+        } else {
+          priceLabel.innerHTML = 'Price (KES) *';
+          priceInput.placeholder = 'e.g., 5000000';
+          priceHint.innerHTML = 'For sale: total price. For rent: monthly rent. For Airbnb: nightly rate.';
+        }
+      }
+
+      if (typeSelect) {
+        typeSelect.addEventListener('change', updatePriceField);
+        // Run once on page load in case of editing (populated by admin.js)
+        // We'll also call it after a short delay to ensure any populated value is set
+        setTimeout(updatePriceField, 100);
+        // Also listen for form population (admin.js will set value, but we need to react)
+        // A more robust way: observe attribute changes on select, but this is enough.
+        // We'll also call it whenever the form is reset or a property is loaded for edit.
+        // Admin.js already calls FormManager.reset() and populateForEdit. We can hook into that.
+        // But simplest: re-run after any click on edit or reset? Not perfect.
+        // We'll use MutationObserver to detect value changes.
+        const observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.attributeName === 'value') {
+              updatePriceField();
+            }
+          });
+        });
+        observer.observe(typeSelect, { attributes: true });
+      }
+    })();
+  </script>
 </body>
 </html>

@@ -560,10 +560,24 @@ const FormManager = {
 // Properties Table
 // =========================
 const PropertiesTable = {
+    currentPage: 1,
+    itemsPerPage: 10,
+    allProperties: [],
+
     render(properties) {
+        this.allProperties = properties;
+        this.currentPage = 1;
+        this.renderPage();
+        this.renderPagination();
+    },
+
+    renderPage() {
         if (!propertiesTable) return;
-        
-        if (!properties.length) {
+        const start = (this.currentPage - 1) * this.itemsPerPage;
+        const end = start + this.itemsPerPage;
+        const pageProperties = this.allProperties.slice(start, end);
+
+        if (!this.allProperties.length) {
             propertiesTable.innerHTML = `
                 <tr>
                     <td colspan="8" class="text-center">
@@ -580,13 +594,11 @@ const PropertiesTable = {
             `;
             return;
         }
-        
+
         propertiesTable.innerHTML = '';
-        
-        properties.forEach(property => {
+        pageProperties.forEach(property => {
             const tr = document.createElement('tr');
             const thumbSrc = property.images?.[0];
-            
             tr.innerHTML = `
                 <td><strong>${this.escapeHtml(property.title)}</strong></td>
                 <td>
@@ -614,8 +626,44 @@ const PropertiesTable = {
             `;
             propertiesTable.appendChild(tr);
         });
-        
-        this.attachEventListeners();
+        this.attachEventListeners(); // re-attach for the current page
+    },
+
+    renderPagination() {
+        const paginationDiv = document.getElementById('paginationControls');
+        if (!paginationDiv) return;
+        const totalPages = Math.ceil(this.allProperties.length / this.itemsPerPage);
+        if (totalPages <= 1) {
+            paginationDiv.innerHTML = '';
+            return;
+        }
+        let html = '';
+        if (this.currentPage > 1) {
+            html += `<button class="pagination-btn" data-page="${this.currentPage - 1}">Prev</button>`;
+        }
+        for (let i = 1; i <= totalPages; i++) {
+            if (i === this.currentPage) {
+                html += `<button class="pagination-btn active" data-page="${i}">${i}</button>`;
+            } else if (Math.abs(i - this.currentPage) <= 2 || i === 1 || i === totalPages) {
+                html += `<button class="pagination-btn" data-page="${i}">${i}</button>`;
+            } else if (Math.abs(i - this.currentPage) === 3) {
+                html += `<span style="margin: 0 4px;">...</span>`;
+            }
+        }
+        if (this.currentPage < totalPages) {
+            html += `<button class="pagination-btn" data-page="${this.currentPage + 1}">Next</button>`;
+        }
+        paginationDiv.innerHTML = html;
+        paginationDiv.querySelectorAll('.pagination-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const page = parseInt(btn.dataset.page);
+                if (!isNaN(page)) {
+                    this.currentPage = page;
+                    this.renderPage();
+                    this.renderPagination();
+                }
+            });
+        });
     },
 
     escapeHtml(str) {
@@ -660,7 +708,7 @@ const PropertiesTable = {
         propertiesTable.querySelectorAll('.thumbnail-clickable').forEach(thumb => {
             thumb.addEventListener('click', () => {
                 const id = thumb.dataset.propertyId;
-                const property = allProperties.find(p => p._id === id);
+                const property = this.allProperties.find(p => p._id === id);
                 if (property?.images?.length) {
                     ImageModal.open(property.images);
                 }
@@ -669,7 +717,7 @@ const PropertiesTable = {
     },
 
     async loadAndRender() {
-        PropertiesTable.showLoading();
+        this.showLoading();
         try {
             const properties = await PropertyAPI.fetchProperties();
             this.render(properties);
@@ -681,11 +729,15 @@ const PropertiesTable = {
     showLoading() {
         if (!propertiesTable) return;
         propertiesTable.innerHTML = '<tr><td colspan="8" class="text-center"><div class="spinner-border text-primary"></div><p class="mt-2">Loading...</p></td></tr>';
+        const paginationDiv = document.getElementById('paginationControls');
+        if (paginationDiv) paginationDiv.innerHTML = '';
     },
 
     showError(error) {
         if (!propertiesTable) return;
         propertiesTable.innerHTML = `<tr><td colspan="8" class="text-center text-danger">Error: ${error}</td></tr>`;
+        const paginationDiv = document.getElementById('paginationControls');
+        if (paginationDiv) paginationDiv.innerHTML = '';
     }
 };
 
