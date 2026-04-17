@@ -4,7 +4,7 @@
   <!-- Home Page -->
   <url>
     <loc>https://propertybyfridah.com/</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,44 +12,74 @@
   <!-- Core Pages -->
   <url>
     <loc>https://propertybyfridah.com/about.html</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://propertybyfridah.com/services.html</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
+
+
   <url>
-    <loc>https://propertybyfridah.com/properties.html</loc>
-    <lastmod>2026-01-26</lastmod>
+    <loc>https://propertybyfridah.com/allproperties.html</loc>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://propertybyfridah.com/contact.html</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Blog Listing -->
+  <!-- Category Listing Pages -->
+  <url>
+    <loc>https://propertybyfridah.com/rentals.html</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://propertybyfridah.com/forsale.html</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://propertybyfridah.com/lands.html</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://propertybyfridah.com/airbnb.html</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Blog Listing & Template -->
   <url>
     <loc>https://propertybyfridah.com/blog.html</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Blog Single Template (optional but ok) -->
   <url>
     <loc>https://propertybyfridah.com/blog-single.html</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -57,128 +87,128 @@
   <!-- Blog Articles -->
   <url>
     <loc>https://propertybyfridah.com/how-to-verify-land-in-kenya.html</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://propertybyfridah.com/first-time-property-buyers-guide-kenya.html</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://propertybyfridah.com/land-buying-red-flags-kenya.html</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://propertybyfridah.com/land-title-transfer-process-kenya.html</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://propertybyfridah.com/title-deed-vs-allotment-letter-kenya.html</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://propertybyfridah.com/diaspora-buying-property-in-kenya.html</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://propertybyfridah.com/questions-to-ask-before-buying-house-kenya.html</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://propertybyfridah.com/kitengela-land-prices-2026.html</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://propertybyfridah.com/stamp-duty-and-buying-costs-kenya.html</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://propertybyfridah.com/syokimau-vs-kitengela-property-investment.html</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- Properties by Location (Filters) -->
+  <!-- Location Filters (core properties page) – keep existing -->
   <url>
-    <loc>https://propertybyfridah.com/properties.html?location=kitengela</loc>
-    <lastmod>2026-01-26</lastmod>
+    <loc>https://propertybyfridah.com/allproperties.html?location=kitengela</loc>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://propertybyfridah.com/properties.html?location=ngong</loc>
-    <lastmod>2026-01-26</lastmod>
+    <loc>https://propertybyfridah.com/allproperties.html?location=ngong</loc>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://propertybyfridah.com/properties.html?location=syokimau</loc>
-    <lastmod>2026-01-26</lastmod>
+    <loc>https://propertybyfridah.com/allproperties.html?location=syokimau</loc>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://propertybyfridah.com/properties.html?location=ongata-rongai</loc>
-    <lastmod>2026-01-26</lastmod>
+    <loc>https://propertybyfridah.com/allproperties.html?location=ongata-rongai</loc>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://propertybyfridah.com/properties.html?location=athi-river</loc>
-    <lastmod>2026-01-26</lastmod>
+    <loc>https://propertybyfridah.com/allproperties.html?location=athi-river</loc>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://propertybyfridah.com/properties.html?location=kilimani</loc>
-    <lastmod>2026-01-26</lastmod>
+    <loc>https://propertybyfridah.com/allproperties.html?location=kilimani</loc>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Optional Anchors (not necessary, but safe) -->
+  <!-- Optional anchor links (kept as is) -->
   <url>
     <loc>https://propertybyfridah.com/about.html#ceo</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://propertybyfridah.com/about.html#areas</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
