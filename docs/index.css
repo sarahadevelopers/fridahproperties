@@ -29,8 +29,8 @@
 
         /* Typography */
         h1, h2, h3, h4, .heading-serif {
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
+            font-family: 'jost', serif;
+            font-weight: 400;
             letter-spacing: -0.02em;
         }
 
@@ -702,7 +702,7 @@
             font-family: 'Playfair Display', serif;
             font-size: 18px;
             font-weight: 600;
-            color: #ffffff;
+            color: #25D366;
             margin-bottom: 24px;
             position: relative;
             display: inline-block;
@@ -715,7 +715,7 @@
             left: 0;
             width: 35px;
             height: 2px;
-            background: var(--accent-gold);
+            background: aliceblue;
         }
         
         .footer-links {
@@ -750,7 +750,7 @@
         }
         
         .contact-info i {
-            color: var(--accent-gold);
+            color: #25D366;
             width: 20px;
         }
         
@@ -784,7 +784,7 @@
         }
         
         .footer-legal-links a:hover {
-            color: var(--accent-gold);
+            color: #25D366;
         }
         
         .footer-legal-links .separator {
@@ -1088,3 +1088,4 @@
 .dropdown-menu li a .item-count {
     margin-left: auto;
 }
+

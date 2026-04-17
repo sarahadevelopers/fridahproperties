@@ -206,6 +206,7 @@
             background: var(--whatsapp-green, #25D366);
             color: white;
         }
+        
     </style>
 </head>
 <body>
@@ -213,11 +214,23 @@
 <!-- Navbar Premium -->
 <nav class="navbar-premium">
     <div class="nav-container">
-        <a href="index.html"><img src="../docs/images/PropertyByFridah-favicon.webp" class="logo-img" alt="Property By Fridah"></a>
+        <a href="index.html"><img src="/docs/images/PropertyByFridah-favicon.webp" class="logo-img" alt="Property By Fridah"></a>
         <ul class="nav-links">
+              <li>
+                <a href="locations.html">All Properties <!--  <i class="fas fa-chevron-down"></i>--></a>
+               <!--   <ul class="dropdown-menu">
+                    <li><a href="locations.html?location=kitengela">Kitengela</a></li>
+                    <li><a href="locations.html?location=ngong">Ngong</a></li>
+                    <li><a href="locations.html?location=syokimau">Syokimau</a></li>
+                    <li><a href="locations.html?location=ongata-rongai">Ongata Rongai</a></li>
+                    <li><a href="locations.html?location=athi-river">Athi River</a></li>
+                    <li><a href="locations.html?location=kilimani">Kilimani</a></li>
+                </ul>-->
+            </li>
             <li>
                 <a href="rentals.html">Rentals <i class="fas fa-chevron-down"></i></a>
                 <ul class="dropdown-menu">
+                    <li><a href="rentals.html">All Rentals</a></li>
                     <li><a href="rentals.html?type=bungalow">Bungalow</a></li>
                     <li><a href="rentals.html?type=maisonette">Maisonette</a></li>
                     <li><a href="rentals.html?type=townhouse">Townhouse</a></li>
@@ -230,6 +243,7 @@
             <li>
                 <a href="forsale.html">For Sale <i class="fas fa-chevron-down"></i></a>
                 <ul class="dropdown-menu">
+                    <li><a href="forsale.html">All For Sale</a></li>
                     <li><a href="forsale.html?type=bungalow">Bungalow</a></li>
                     <li><a href="forsale.html?type=maisonette">Maisonette</a></li>
                     <li><a href="forsale.html?type=townhouse">Townhouse</a></li>
@@ -240,6 +254,7 @@
             <li>
                 <a href="lands.html">Lands & Plots <i class="fas fa-chevron-down"></i></a>
                 <ul class="dropdown-menu">
+                    <li><a href="lands.html">All Lands & Plots</a></li>
                     <li><a href="lands.html?type=residential">Residential Plot</a></li>
                     <li><a href="lands.html?type=commercial">Commercial Land</a></li>
                     <li><a href="lands.html?type=agricultural">Agricultural</a></li>
@@ -248,6 +263,7 @@
             <li>
                 <a href="airbnb.html">Airbnb <i class="fas fa-chevron-down"></i></a>
                 <ul class="dropdown-menu">
+                    <li><a href="airbnb.html">All Airbnb Listings</a></li>
                     <li><a href="airbnb.html?location=kitengela">Kitengela</a></li>
                     <li><a href="airbnb.html?location=ngong">Ngong</a></li>
                     <li><a href="airbnb.html?location=syokimau">Syokimau</a></li>
@@ -256,17 +272,7 @@
                     <li><a href="airbnb.html?location=kilimani">Kilimani</a></li>
                 </ul>
             </li>
-            <li>
-                <a href="locations.html">Locations <i class="fas fa-chevron-down"></i></a>
-                <ul class="dropdown-menu">
-                    <li><a href="locations.html?location=kitengela">Kitengela</a></li>
-                    <li><a href="locations.html?location=ngong">Ngong</a></li>
-                    <li><a href="locations.html?location=syokimau">Syokimau</a></li>
-                    <li><a href="locations.html?location=ongata-rongai">Ongata Rongai</a></li>
-                    <li><a href="locations.html?location=athi-river">Athi River</a></li>
-                    <li><a href="locations.html?location=kilimani">Kilimani</a></li>
-                </ul>
-            </li>
+          
             <li><a href="blog.html">Insights</a></li>
             <li><a href="tel:+254721911181" class="btn-nav-cta"><i class="fas fa-phone-alt"></i> +254 721 911 181</a></li>
         </ul>
@@ -284,12 +290,12 @@
         <input type="text" id="mobileSearchInput" placeholder="Search location, price...">
     </div>
     <div class="mobile-nav-links">
+        <div class="nav-item"><a href="locations.html"><i class="fas fa-map-marker-alt"></i> All Properties</a></div>
         <div class="nav-item"><a href="rentals.html"><i class="fas fa-home"></i> Rentals</a></div>
         <div class="nav-item"><a href="forsale.html"><i class="fas fa-building"></i> For Sale</a></div>
         <div class="nav-item"><a href="lands.html"><i class="fas fa-map-pin"></i> Lands & Plots</a></div>
         <div class="nav-item"><a href="airbnb.html"><i class="fab fa-airbnb"></i> Airbnb</a></div>
-        <div class="nav-item"><a href="locations.html"><i class="fas fa-map-marker-alt"></i> Locations</a></div>
-        <div class="nav-item"><a href="blog.html"><i class="fas fa-newspaper"></i> Insights</a></div>
+         <div class="nav-item"><a href="blog.html"><i class="fas fa-newspaper"></i> Insights</a></div>
     </div>
     <div class="mobile-trust">
         <p><i class="fas fa-shield-alt"></i> 100% Verified Properties</p>
@@ -303,10 +309,8 @@
     <a href="index.html" class="active"><i class="fas fa-home"></i><span>Home</span></a>
     <a href="rentals.html"><i class="fas fa-building"></i><span>Rentals</span></a>
     <a href="forsale.html"><i class="fas fa-hand-holding-usd"></i><span>For Sale</span></a>
-    <a href="lands.html"><i class="fas fa-map-pin"></i><span>Land</span></a>
-    <a href="airbnb.html"><i class="fab fa-airbnb"></i><span>Airbnb</span></a>
-    <a href="locations.html"><i class="fas fa-map-marker-alt"></i><span>Areas</span></a>
-    <a href="https://wa.me/254721911181"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a>
+    <a href="lands.html"><i class="fas fa-map-marker-alt"></i><span>Land</span></a>
+    <a href="airbnb.html" ><i class="fab fa-airbnb"></i><span>Airbnb</span></a>
     <a href="tel:+254721911181"><i class="fas fa-phone-alt"></i><span>Call</span></a>
 </div>
 
@@ -317,8 +321,8 @@
     </video>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-        <span class="kicker-tag">VERIFIED BY FRIDAH</span>
-        <h1>Homes You Can Trust.<br><span style="color: var(--accent-gold, #EFBF04);">Deals You Can Close.</span></h1>
+        <span class="kicker-tag" style="color: #25D366;">~ PROPERTY BY FRIDAH LTD.</span>
+        <h1>Get Verified Property<br><span style="color: #25D366;">We don't Just sell, We Verify</span></h1>
         <div class="glass-search-bar">
             <div class="search-form">
                 <div class="search-column">
@@ -561,6 +565,8 @@
         </div>
     </div>
 </footer>
+<!-- WhatsApp Float -->
+<a href="https://wa.me/254721911181" class="whatsapp-float" style="position: fixed; bottom: 80px; right: 20px; background: #25D366; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 999;" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <!-- Scripts -->
 <script src="shared-api.js"></script>
