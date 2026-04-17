@@ -818,27 +818,30 @@
     init();
 
     // Mobile menu toggle (fixed)
-    const menuToggleBtn = document.getElementById('menuToggleBtn');
-    const mobileMenuDiv = document.getElementById('mobileMenu');
-    const mobileOverlayDiv = document.getElementById('mobileOverlay');
-    const mobileCloseBtn = document.getElementById('closeMobileMenu');
+   // Mobile menu toggle – use class selector
+const menuToggleBtn = document.querySelector('.menu-toggle');
+const mobileMenuDiv = document.getElementById('mobileMenu');
+const mobileOverlayDiv = document.getElementById('mobileOverlay');
+const mobileCloseBtn = document.getElementById('closeMobileMenu');
 
-    function openMobileMenu() {
-        mobileMenuDiv.classList.add('active');
-        mobileOverlayDiv.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-    function closeMobileMenu() {
-        mobileMenuDiv.classList.remove('active');
-        mobileOverlayDiv.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-    if (menuToggleBtn) menuToggleBtn.addEventListener('click', openMobileMenu);
-    if (mobileCloseBtn) mobileCloseBtn.addEventListener('click', closeMobileMenu);
-    if (mobileOverlayDiv) mobileOverlayDiv.addEventListener('click', closeMobileMenu);
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && mobileMenuDiv.classList.contains('active')) closeMobileMenu();
-    });
+function openMobileMenu() {
+    mobileMenuDiv.classList.add('active');
+    mobileOverlayDiv.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeMobileMenu() {
+    mobileMenuDiv.classList.remove('active');
+    mobileOverlayDiv.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+if (menuToggleBtn) menuToggleBtn.addEventListener('click', openMobileMenu);
+if (mobileCloseBtn) mobileCloseBtn.addEventListener('click', closeMobileMenu);
+if (mobileOverlayDiv) mobileOverlayDiv.addEventListener('click', closeMobileMenu);
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenuDiv.classList.contains('active')) closeMobileMenu();
+});
     document.getElementById("currentYear").textContent = new Date().getFullYear();
 </script>
 </body>
