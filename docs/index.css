@@ -1,3 +1,19 @@
+   /* ================= GLOBAL LINK RESET ================= */
+a {
+    color: inherit;            /* remove default blue */
+    text-decoration: none;     /* remove underline */
+    transition: 0.2s ease;
+}
+
+/* Hover state */
+a:hover {
+    color: var(--gold);        /* your brand interaction color */
+}
+
+/* Visited links (prevents purple) */
+a:visited {
+    color: inherit;
+}
    * {
             margin: 0;
             padding: 0;
@@ -246,65 +262,9 @@
             z-index: -2;
         }
         
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.75));
-            z-index: -1;
-        }
+       
+      
         
-        .hero-content {
-            max-width: 900px;
-            width: 90%;
-            color: white;
-        }
-        
-        .kicker-tag {
-            font-size: 12px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--accent-gold);
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-        
-        .glass-search-bar {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(18px);
-            border-radius: 60px;
-            padding: 16px 24px;
-            margin-top: 40px;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        
-        .search-form {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .search-column select, .search-column input {
-            background: rgba(255,255,255,0.2);
-            border: none;
-            border-radius: 60px;
-            padding: 12px 18px;
-            color: white;
-            font-size: 14px;
-            width: 180px;
-        }
-        
-        .btn-premium-search {
-            background: var(--whatsapp-green);
-            border: none;
-            border-radius: 60px;
-            padding: 12px 32px;
-            font-weight: 700;
-            color: white;
-            transition: 0.2s;
-            cursor: pointer;
-        }
         
         /* Category Grid */
         .category-grid {

@@ -188,24 +188,140 @@
             color: #4b5563;
         }
         
-        .btn-view-details {
-            width: 100%;
-            background: transparent;
-            border: 1.5px solid var(--whatsapp-green, #25D366);
-            padding: 10px;
-            border-radius: 40px;
-            font-weight: 600;
-            color: var(--whatsapp-green, #25D366);
-            transition: 0.2s;
-            margin-top: 12px;
-            cursor: pointer;
-            font-family: 'Jost', sans-serif;
-        }
-        
-        .btn-view-details:hover {
-            background: var(--whatsapp-green, #25D366);
-            color: white;
-        }
+  /* ========== HERO SECTION ========== */
+.hero-premium {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    overflow: hidden;
+}
+
+/* Background Video */
+.hero-bg-video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.1);
+    filter: brightness(0.5) contrast(1.1) saturate(1.1);
+    z-index: -2;
+}
+
+/* Overlay */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.55),
+        rgba(0, 0, 0, 0.8)
+    );
+    z-index: -1;
+}
+
+/* Centered Content */
+.hero-container.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    margin: auto;
+    animation: fadeUp 1s ease;
+}
+
+/* Kicker */
+.kicker-tag {
+    font-size: 12px;
+    letter-spacing: 3px;
+   
+    color: #25D366;
+    margin-bottom: 10px;
+}
+
+/* Heading */
+.hero-container h1 {
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    margin: 20px 0;
+}
+
+.hero-container h1 span {
+    color: #25D366;
+    font-weight: 400;
+}
+
+/* Buttons Container */
+.hero-actions {
+    display: flex;
+    gap: 14px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Primary Button */
+.btn-primary {
+    padding: 14px 30px;
+    border-radius: 50px;
+    background: white;
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    background: #f2f2f2;
+}
+
+/* WhatsApp Button */
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 14px 26px;
+    border-radius: 50px;
+
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.4);
+    color: white;
+
+    text-decoration: none;
+    font-weight: 500;
+
+    transition: all 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: #25D366;
+    color: #25D366;
+    transform: translateY(-2px);
+}
+
+/* Subtle Animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
         
     </style>
 </head>
@@ -313,39 +429,35 @@
     <a href="tel:+254721911181"><i class="fas fa-phone-alt"></i><span>Call</span></a>
 </div>
 
-<!-- Hero Section -->
+<!-- hero section -->  
 <section class="hero-premium">
+
+    <!-- Background Video -->
     <video class="hero-bg-video" autoplay muted loop playsinline>
         <source src="https://assets.mixkit.co/videos/15773/15773-720.mp4" type="video/mp4">
     </video>
+
     <div class="hero-overlay"></div>
-    <div class="hero-content">
-        <span class="kicker-tag" style="color: #25D366;">~ PROPERTY BY FRIDAH LTD.</span>
-        <h1>Get Verified Property<br><span style="color: #25D366;">We don't Just sell, We Verify</span></h1>
-        <div class="glass-search-bar">
-            <div class="search-form">
-                <div class="search-column">
-                    <select id="heroLocation">
-                        <option value="">All Locations</option>
-                        <option value="kitengela">Kitengela</option>
-                        <option value="ngong">Ngong</option>
-                        <option value="syokimau">Syokimau</option>
-                        <option value="ongata-rongai">Ongata Rongai</option>
-                        <option value="athi-river">Athi River</option>
-                        <option value="kilimani">Kilimani</option>
-                    </select>
-                </div>
-                <div class="search-column">
-                    <select id="heroType">
-                        <option value="">Property Type</option>
-                        <option value="rent">Rent</option>
-                        <option value="sale">Sale</option>
-                        <option value="plots">Plots</option>
-                    </select>
-                </div>
-                <button type="button" id="heroSearchBtn" class="btn-premium-search"><i class="fas fa-search"></i> Find Property</button>
-            </div>
+
+    <div class="hero-container center">
+
+        <span class="kicker-tag">~ Property By Fridah Ltd.</span>
+
+        <h1>
+            Get Verified Property<br>
+            <span>Buy. Rent. Invest.</span>
+        </h1>
+
+        <div class="hero-actions" >
+            <a href="locations.html" class="btn-primary" style="background-color: #25D366;">
+              <i class="fas fa-search"></i>  Find Property
+            </a>
+
+            <a href="#" id="whatsappBtn" class="btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> Enquire on WhatsApp
+            </a>
         </div>
+
     </div>
 </section>
 
