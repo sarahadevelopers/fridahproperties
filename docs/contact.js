@@ -1,131 +1,39 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // =========================
-    // Mobile Menu Toggle
-    // =========================
-    const mobileMenuBtn = document.getElementById('mobileMenu');
-    const navLinks = document.getElementById('navLinks');
-    const overlay = document.getElementById('overlay');
+ document.getElementById("currentYear").textContent = new Date().getFullYear();
 
-    if (mobileMenuBtn && navLinks && overlay) {
-        const toggleMenu = () => {
-            navLinks.classList.toggle('active');
-            overlay.classList.toggle('active');
-            document.body.classList.toggle('menu-open');
+    // Mobile menu toggle (same as index)
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mobileMenuDiv = document.getElementById("mobileMenu");
+    const mobileOverlayDiv = document.getElementById("mobileOverlay");
+    const mobileCloseBtn = document.getElementById("closeMobileMenu");
+    function openMobileMenu() { mobileMenuDiv.classList.add("active"); mobileOverlayDiv.classList.add("active"); document.body.style.overflow = 'hidden'; }
+    function closeMobileMenu() { mobileMenuDiv.classList.remove("active"); mobileOverlayDiv.classList.remove("active"); document.body.style.overflow = ''; }
+    if (menuToggle) menuToggle.addEventListener("click", openMobileMenu);
+    if (mobileCloseBtn) mobileCloseBtn.addEventListener("click", closeMobileMenu);
+    if (mobileOverlayDiv) mobileOverlayDiv.addEventListener("click", closeMobileMenu);
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && mobileMenuDiv.classList.contains("active")) closeMobileMenu(); });
 
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('active')
-                ? '<i class="fas fa-times"></i>'
-                : '<i class="fas fa-bars"></i>';
-        };
-
-        mobileMenuBtn.addEventListener('click', toggleMenu);
-
-        document.querySelectorAll('#navLinks a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                overlay.classList.remove('active');
-                document.body.classList.remove('menu-open');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
-
-        overlay.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            overlay.classList.remove('active');
-            document.body.classList.remove('menu-open');
-            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-        });
-    }
-
-    // =========================
-    // Set current year in footer
-    // =========================
-    const yearElem = document.getElementById('currentYear');
-    if (yearElem) yearElem.textContent = new Date().getFullYear();
-
-    // =========================
-    // Contact Form Submission
-    // =========================
-    const contactForm = document.getElementById('propertyInquiryForm');
-    const successMessage = document.getElementById('successMessage');
-
-    if (contactForm) {
-        contactForm.addEventListener('submit', e => {
+    // Form submission (WhatsApp + email)
+    const form = document.getElementById('propertyInquiryForm');
+    const successMsg = document.getElementById('successMessage');
+    if (form) {
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
-
             const firstName = document.getElementById('firstName')?.value || '';
             const phone = document.getElementById('phone')?.value || '';
             const propertyType = document.getElementById('propertyType')?.value || '';
             const location = document.getElementById('location')?.value || '';
             const message = document.getElementById('message')?.value || '';
-
-            let whatsappMessage = `Hello Property by Fridah,%0A%0A`;
-            whatsappMessage += `I'm interested in property consultation.%0A`;
-            whatsappMessage += `Name: ${firstName}%0A`;
-            whatsappMessage += `Phone: ${phone}%0A`;
-            if (propertyType) whatsappMessage += `Property Type: ${propertyType}%0A`;
-            if (location) whatsappMessage += `Location: ${location}%0A`;
-            whatsappMessage += `Message: ${message}%0A%0APlease contact me with available properties.`;
-
-            window.open(`https://wa.me/254721911181?text=${whatsappMessage}`, '_blank');
-
-            if (successMessage) successMessage.classList.add('show');
-            contactForm.reset();
-
-            if (successMessage) {
-                setTimeout(() => successMessage.classList.remove('show'), 10000);
-            }
-
-            // Save email to localStorage
-            const emailInput = document.getElementById('email');
-            if (emailInput?.value) {
-                localStorage.setItem('propertyByFridahEmail', emailInput.value);
-            }
+            let whatsappMsg = `Hello Property by Fridah,%0A%0AI'm interested in property consultation.%0AName: ${firstName}%0APhone: ${phone}%0A`;
+            if (propertyType) whatsappMsg += `Property Type: ${propertyType}%0A`;
+            if (location) whatsappMsg += `Location: ${location}%0A`;
+            whatsappMsg += `Message: ${message}%0A%0APlease contact me with available properties.`;
+            window.open(`https://wa.me/254721911181?text=${whatsappMsg}`, '_blank');
+            if (successMsg) successMsg.style.display = 'block';
+            form.reset();
+            setTimeout(() => { if (successMsg) successMsg.style.display = 'none'; }, 5000);
+            const email = document.getElementById('email')?.value;
+            if (email) localStorage.setItem('propertyByFridahEmail', email);
         });
-
-        // Auto-populate email if available from localStorage
         const savedEmail = localStorage.getItem('propertyByFridahEmail');
-        const emailInput = document.getElementById('email');
-        if (savedEmail && emailInput) {
-            emailInput.value = savedEmail;
-        }
+        if (savedEmail && document.getElementById('email')) document.getElementById('email').value = savedEmail;
     }
-
-    // =========================
-    // Smooth Scrolling for Anchors
-    // =========================
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (!targetId || targetId === '#') return;
-
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    // =========================
-    // Phone number formatting
-    // =========================
-    const phoneInput = document.getElementById('phone');
-    if (phoneInput) {
-        phoneInput.addEventListener('input', e => {
-            let value = e.target.value.replace(/\D/g, '');
-
-            if (value.startsWith('0')) {
-                value = '+254' + value.substring(1);
-            } else if (value.startsWith('254')) {
-                value = '+' + value;
-            } else if (value.startsWith('7') && value.length === 9) {
-                value = '+254' + value;
-            }
-
-            e.target.value = value;
-        });
-    }
-});

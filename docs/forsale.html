@@ -223,6 +223,94 @@
             .modal-content { margin: 0; border-radius: 0; height: 100vh; overflow-y: auto; }
             .modal-gallery .main-image-container { height: 300px; }
         }
+
+        /* Mobile filter layout for Airbnb page */
+@media (max-width: 768px) {
+    .filters-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    /* Short Stays tab (single button) – full width */
+    .filter-tabs .tab-btn {
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    /* Search input – full width (span both columns) */
+    .filter-group.search-wide {
+        grid-column: span 2;
+    }
+
+    /* Location – first column, first row */
+    .filter-group:nth-of-type(2) {
+        grid-column: 1 / 2;
+        grid-row: auto;
+    }
+
+    /* Property Type – second column, first row */
+    .filter-group:nth-of-type(3) {
+        grid-column: 2 / 3;
+        grid-row: auto;
+    }
+
+    /* Nightly Rate – first column, second row */
+    .filter-group:nth-of-type(4) {
+        grid-column: 1 / 2;
+    }
+
+    /* Bedrooms – second column, second row */
+    .filter-group:nth-of-type(5) {
+        grid-column: 2 / 3;
+    }
+
+    /* Buttons – span both columns, side by side */
+    .filter-btns {
+        grid-column: span 2;
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+        margin-top: 8px;
+    }
+
+    .filter-btns .btn-primary,
+    .filter-btns .btn-link {
+        flex: 1;
+        text-align: center;
+        padding: 10px 12px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    /* Optional: adjust label and input sizes */
+    .filter-group label {
+        font-size: 11px;
+        margin-bottom: 4px;
+    }
+
+    .filter-select, .filter-input {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .filters-wrap {
+        padding: 16px;
+    }
+}
+
+/* Extra small devices – keep buttons side by side (no stacking) */
+@media (max-width: 480px) {
+    .filter-btns {
+        flex-direction: row;
+        gap: 8px;
+    }
+    .filter-btns .btn-primary,
+    .filter-btns .btn-link {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+}
     </style>
 </head>
 <body>
@@ -290,8 +378,8 @@
             </li>
           
             <li><a href="blog.html">Insights</a></li>
-            <li><a href="tel:+254721911181" class="btn-nav-cta"><i class="fas fa-phone-alt"></i> +254 721 911 181</a></li>
-        </ul>
+        <li><a href="contact.html" class="btn-nav-cta"><i class="fas fa-phone-alt"></i> +254 721 911 181</a></li>
+   </ul>
         <div class="menu-toggle"><i class="fas fa-bars"></i></div>
     </div>
 </nav>
