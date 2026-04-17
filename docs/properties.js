@@ -10,7 +10,7 @@ if (page === 'rentals.html') pageType = 'rent';
 else if (page === 'forsale.html') pageType = 'sale';
 else if (page === 'land.html') pageType = 'land';
 else if (page === 'airbnb.html') pageType = 'airbnb';
-else if (page === 'locations.html') pageType = 'location';
+else if (page === 'allproperties.html') pageType = 'location';
     // ========== CONFIGURATION ==========
     const CONFIG = {
         apiBase: 'https://propertybyfridahnew-db-user.onrender.com',
@@ -83,7 +83,7 @@ else if (page === 'locations.html') pageType = 'location';
     else if (page === 'forsale.html') pageType = 'sale';
     else if (page === 'land.html') pageType = 'land';
     else if (page === 'airbnb.html') pageType = 'airbnb';
-    else if (page === 'locations.html') pageType = 'location';
+    else if (page === 'allproperties.html') pageType = 'location';
     
     // Store pageType in state for later use in filters
     state.pageType = pageType;

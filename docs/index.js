@@ -531,7 +531,7 @@ function setupHeroSearch() {
         const params = new URLSearchParams();
         if (heroLocation && heroLocation.value) params.set('location', heroLocation.value);
         if (heroType && heroType.value) params.set('type', heroType.value);
-        window.location.href = `locations.html?${params.toString()}`;
+        window.location.href = `allproperties.html?${params.toString()}`;
     };
     
     if (heroSearchBtn) heroSearchBtn.addEventListener('click', performSearch);
@@ -587,7 +587,7 @@ if (mobileSearchInput) {
     mobileSearchInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             const query = e.target.value.trim();
-            if (query) window.location.href = `locations.html?search=${encodeURIComponent(query)}`;
+            if (query) window.location.href = `allproperties.html?search=${encodeURIComponent(query)}`;
         }
     });
 }
@@ -619,7 +619,7 @@ mapLocations.forEach(l => {
     const marker = L.marker(l.coords).addTo(map);
     marker.bindPopup(`${l.name} - Verified Properties`);
     marker.on('click', () => {
-        window.location.href = `locations.html?location=${l.name.toLowerCase().replace(' ', '-')}`;
+        window.location.href = `allproperties.html?location=${l.name.toLowerCase().replace(' ', '-')}`;
     });
 });
 
