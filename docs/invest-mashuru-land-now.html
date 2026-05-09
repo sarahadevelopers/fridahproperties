@@ -36,74 +36,229 @@
   <link rel="stylesheet" href="index.css" />
   <link rel="stylesheet" href="blog-single.css" />
 
-  <style>
-    .article-hero.blog10 {
-      background: linear-gradient(120deg, rgba(10,15,28,0.85), rgba(10,15,28,0.7)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+ <style>
+    .article-hero.blog7 {
+      background: linear-gradient(120deg, rgba(10,15,28,0.85), rgba(10,15,28,0.7)), url('https://images.unsplash.com/photo-1580674285054-bed31e145f59?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
       background-size: cover;
-      background-position: center 40%;
+      background-position: center 45%;
     }
-    .urgency-box {
-      background: #fff3e0;
-      border-left: 8px solid #EFBF04;
-      padding: 1.5rem;
-      border-radius: 24px;
-      margin: 2rem 0;
+    .opportunity-card {
+      background: #fefef7;
+      border-radius: 28px;
+      padding: 1.6rem;
+      margin: 1.8rem 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      border-bottom: 4px solid #0a5e46;
     }
-    .timeline-badge {
-      background: #0a5e46;
-      color: white;
-      padding: 4px 12px;
-      border-radius: 50px;
-      display: inline-block;
-      font-size: 0.8rem;
+    .opportunity-icon {
+      font-size: 2rem;
+      color: #EFBF04;
       margin-bottom: 0.8rem;
     }
-    .final-cta {
-      background: linear-gradient(135deg, #EFBF04, #d4a500);
-      border-radius: 40px;
-      padding: 2.5rem;
-      text-align: center;
-      margin: 2.5rem 0;
-    }
-    .final-cta h2 {
-      margin: 0 0 0.5rem;
-      color: #0a0f1c;
-    }
-    .cta-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-    .btn-cta-primary {
-      background: #0a0f1c;
-      color: #EFBF04;
-      padding: 14px 32px;
-      border-radius: 60px;
-      text-decoration: none;
-      font-weight: 800;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .btn-cta-secondary {
-      background: white;
-      color: #0a0f1c;
-      padding: 14px 32px;
-      border-radius: 60px;
-      text-decoration: none;
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .market-trend {
+    .commercial-stats {
       background: #eef2fa;
-      padding: 1rem 1.5rem;
-      border-radius: 20px;
-      margin: 1rem 0;
+      border-radius: 24px;
+      padding: 1.2rem;
+      margin: 1.5rem 0;
     }
+    .cta-commercial {
+      background: linear-gradient(115deg, #1e2a3a, #0f1722);
+      border-radius: 32px;
+      padding: 2rem;
+      text-align: center;
+      margin: 2rem 0;
+      color: white;
+    }
+    /* ========== MOBILE RESPONSIVE STYLES (for all Mashuru blogs) ========== */
+@media (max-width: 768px) {
+  /* General layout */
+  body {
+    overflow-x: hidden;
+  }
+  
+  .article-main {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+  
+  /* Hero section */
+  .article-hero-content {
+    padding: 2rem 1rem;
+  }
+  .article-title {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+  .article-excerpt {
+    font-size: 1rem;
+  }
+  
+  /* Images */
+  .blog-image-inline {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    margin: 1.5rem 0;
+  }
+  
+  /* Typography */
+  .article-content h2 {
+    font-size: 1.5rem;
+    margin-top: 1.8rem;
+  }
+  .article-content h3 {
+    font-size: 1.3rem;
+  }
+  .article-content p, 
+  .article-content li {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  /* Tables (profit-table, comparison-table) */
+  .profit-table,
+  .comparison-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  .profit-table th,
+  .profit-table td,
+  .comparison-table th,
+  .comparison-table td {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+  
+  /* Callout boxes */
+  .callout-box,
+  .water-card,
+  .opportunity-card,
+  .crop-card {
+    padding: 1.2rem;
+    margin: 1.5rem 0;
+  }
+  .callout-title {
+    font-size: 1.1rem;
+  }
+  
+  /* Checklist steps */
+  .checklist-step {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Feature grids (2-4 columns) */
+  .feature-grid,
+  .attraction-grid,
+  .partner-logos {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .feature-card,
+  .attraction-item {
+    width: 100%;
+  }
+  
+  /* Buttons and CTAs */
+  .final-cta .cta-buttons,
+  .inline-cta-banner .cta-buttons,
+  .featured-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .btn,
+  .btn-cta-primary,
+  .btn-cta-secondary,
+  .btn-whatsapp,
+  .btn-secondary,
+  a.btn {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin: 6px 0;
+    box-sizing: border-box;
+  }
+  
+  /* Sidebar */
+  .article-sidebar {
+    margin-top: 2rem;
+    width: 100%;
+  }
+  .sidebar-cta {
+    padding: 1.2rem;
+  }
+  
+  /* Download lead magnet */
+  .download-lead {
+    padding: 1.5rem;
+  }
+  .download-lead .btn-pdf {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  /* Timeline comparison (road blog) */
+  .comparison-row {
+    flex-direction: column;
+  }
+  .comparison-card {
+    width: 100%;
+    margin-bottom: 0.8rem;
+  }
+  
+  /* Pricing tables / lists */
+  ul, ol {
+    padding-left: 1.2rem;
+  }
+  
+  /* Newsletter form */
+  .newsletter-form {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .newsletter-form input,
+  .newsletter-form button {
+    width: 100%;
+    border-radius: 40px;
+  }
+  
+  /* Footer adjustments */
+  .footer-grid {
+    gap: 1.5rem;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+}
+@media (max-width: 480px) {
+  .article-title {
+    font-size: 1.5rem;
+  }
+  .article-content h2 {
+    font-size: 1.3rem;
+  }
+  .callout-box,
+  .water-card,
+  .opportunity-card {
+    padding: 1rem;
+  }
+  .profit-table th,
+  .profit-table td {
+    padding: 6px 8px;
+    font-size: 0.75rem;
+  }
+}
   </style>
 </head>
 <body class="blog-single-page">

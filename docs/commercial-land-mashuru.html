@@ -70,6 +70,196 @@
       margin: 2rem 0;
       color: white;
     }
+    /* ========== MOBILE RESPONSIVE STYLES (for all Mashuru blogs) ========== */
+@media (max-width: 768px) {
+  /* General layout */
+  body {
+    overflow-x: hidden;
+  }
+  
+  .article-main {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+  
+  /* Hero section */
+  .article-hero-content {
+    padding: 2rem 1rem;
+  }
+  .article-title {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+  .article-excerpt {
+    font-size: 1rem;
+  }
+  
+  /* Images */
+  .blog-image-inline {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    margin: 1.5rem 0;
+  }
+  
+  /* Typography */
+  .article-content h2 {
+    font-size: 1.5rem;
+    margin-top: 1.8rem;
+  }
+  .article-content h3 {
+    font-size: 1.3rem;
+  }
+  .article-content p, 
+  .article-content li {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  /* Tables (profit-table, comparison-table) */
+  .profit-table,
+  .comparison-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  .profit-table th,
+  .profit-table td,
+  .comparison-table th,
+  .comparison-table td {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+  
+  /* Callout boxes */
+  .callout-box,
+  .water-card,
+  .opportunity-card,
+  .crop-card {
+    padding: 1.2rem;
+    margin: 1.5rem 0;
+  }
+  .callout-title {
+    font-size: 1.1rem;
+  }
+  
+  /* Checklist steps */
+  .checklist-step {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Feature grids (2-4 columns) */
+  .feature-grid,
+  .attraction-grid,
+  .partner-logos {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .feature-card,
+  .attraction-item {
+    width: 100%;
+  }
+  
+  /* Buttons and CTAs */
+  .final-cta .cta-buttons,
+  .inline-cta-banner .cta-buttons,
+  .featured-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .btn,
+  .btn-cta-primary,
+  .btn-cta-secondary,
+  .btn-whatsapp,
+  .btn-secondary,
+  a.btn {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin: 6px 0;
+    box-sizing: border-box;
+  }
+  
+  /* Sidebar */
+  .article-sidebar {
+    margin-top: 2rem;
+    width: 100%;
+  }
+  .sidebar-cta {
+    padding: 1.2rem;
+  }
+  
+  /* Download lead magnet */
+  .download-lead {
+    padding: 1.5rem;
+  }
+  .download-lead .btn-pdf {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  /* Timeline comparison (road blog) */
+  .comparison-row {
+    flex-direction: column;
+  }
+  .comparison-card {
+    width: 100%;
+    margin-bottom: 0.8rem;
+  }
+  
+  /* Pricing tables / lists */
+  ul, ol {
+    padding-left: 1.2rem;
+  }
+  
+  /* Newsletter form */
+  .newsletter-form {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .newsletter-form input,
+  .newsletter-form button {
+    width: 100%;
+    border-radius: 40px;
+  }
+  
+  /* Footer adjustments */
+  .footer-grid {
+    gap: 1.5rem;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+}
+@media (max-width: 480px) {
+  .article-title {
+    font-size: 1.5rem;
+  }
+  .article-content h2 {
+    font-size: 1.3rem;
+  }
+  .callout-box,
+  .water-card,
+  .opportunity-card {
+    padding: 1rem;
+  }
+  .profit-table th,
+  .profit-table td {
+    padding: 6px 8px;
+    font-size: 0.75rem;
+  }
+}
   </style>
 </head>
 <body class="blog-single-page">
